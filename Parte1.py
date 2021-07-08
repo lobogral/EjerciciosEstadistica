@@ -1,61 +1,69 @@
-def medidasPosicion(datos, decimales):
+def tamaño(muestra):
+    return len(muestra)
 
-    n = len(datos)
-    print("El tamaño de la muestra es:", n)
+def media(muestra, decimales):
+    media = sum(muestra)/len(muestra)
+    return '{:.{}f}'.format(media, decimales)
 
-    media = sum(datos)/n
-    media = '{:.{}f}'.format(media, decimales)
-    print("La media de la muestra es:", media)
-
-    datosOrdenados = sorted(datos)
-    if len(datosOrdenados) % 2 != 0:
-        mediana = datosOrdenados[(n-1)//2]
+def mediana(muestra, decimales):
+    n = len(muestra)
+    muestra = sorted(muestra)
+    if tamaño(muestra) % 2 != 0:
+        return muestra[(n-1)//2]
     else:
-        mediana = (datosOrdenados[n//2-1]+datosOrdenados[n//2])/2
-        mediana = '{:.{}f}'.format(mediana, decimales)
-    print("La mediana de la muestra es:", mediana)
+        mediana = (muestra[n//2-1]+muestra[n//2])/2
+        return '{:.{}f}'.format(mediana, decimales)
     
-def mediaRecortada(datos, decimales, porcentaje):
+def mediaRecortada(muestra, decimales, porcentaje):
 
-    n = len(datos)
-    datos = sorted(datos)
+    n = len(muestra)
+    muestra = sorted(muestra)
     numDatosRetirados = round(porcentaje*n)
     
-    datos = datos[numDatosRetirados:(n - numDatosRetirados)]
-    mediaRecortada = sum(datos)/(n - numDatosRetirados*2)
-    mediaRecortada = '{:.{}f}'.format(mediaRecortada, decimales)
-    print("La media recortada de la muestra es:", mediaRecortada)
-    
+    muestra = muestra[numDatosRetirados:(n - numDatosRetirados)]
+    mediaRecortada = sum(muestra)/(n - numDatosRetirados*2)
+    return '{:.{}f}'.format(mediaRecortada, decimales)    
 
-datos = [3.4, 2.5, 4.8, 2.9, 3.6,
-         2.8, 3.3, 5.6, 3.7, 2.8,
-         4.4, 4.0, 5.2, 3.0, 4.8]
-print(datos)
-medidasPosicion(datos, 3)
-mediaRecortada(datos, 3, 0.2)
+
+print("1.1")
+muestra = [3.4, 2.5, 4.8, 2.9, 3.6,
+           2.8, 3.3, 5.6, 3.7, 2.8,
+           4.4, 4.0, 5.2, 3.0, 4.8]
+print(muestra)
+print("Tamaño de la muestra =", tamaño(muestra))
+print("Media de la muestra =", media(muestra, 3))
+print("Mediana de la muestra =", mediana(muestra, 3))
+print("x_tr(20) =", mediaRecortada(muestra, 3, 0.2))
+
 
 print("")
-datos = [227, 222, 218, 217, 225,
+print("1.3")
+muestra = [227, 222, 218, 217, 225,
          218, 216, 229, 228, 221]
-print(datos)
-medidasPosicion(datos, 2)
-
-print("")
-datos = [219, 214, 215, 211, 209,
+print(muestra)
+print("Media NoEnvejecimiento =", media(muestra, 2))
+print("Mediana NoEnvejecimiento =", mediana(muestra, 2))
+muestra = [219, 214, 215, 211, 209,
          218, 203, 204, 201, 205]
-print(datos)
-medidasPosicion(datos, 2)
+print(muestra)
+print("Media Envejecimiento =", media(muestra, 2))
+print("Mediana Envejecimiento =", mediana(muestra, 2))
+
 
 print("")
-datos = [7,  3, -4, 14, 2,
+print("1.5")
+muestra = [7,  3, -4, 14, 2,
          5, 22, -7,  9, 5]
-print(datos)
-medidasPosicion(datos, 2)
-mediaRecortada(datos, 3, 0.1)
-
-print("")
-datos = [-6,  5, 9, 4, 4,
+print(muestra)
+print("Control")
+print("x_ =", media(muestra, 2))
+print("x~ =", mediana(muestra, 2))
+print("x_tr(10) =", mediaRecortada(muestra, 3, 0.1))
+muestra = [-6,  5, 9, 4, 4,
          12, 37, 5, 3, 3]
-print(datos)
-medidasPosicion(datos, 2)
-mediaRecortada(datos, 3, 0.1)
+print(muestra)
+print("Tratamiento")
+print("x_ =", media(muestra, 2))
+print("x~ =", mediana(muestra, 2))
+print("x_tr(10) =", mediaRecortada(muestra, 3, 0.1))
+
