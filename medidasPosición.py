@@ -12,11 +12,9 @@ def mediana(muestra, decimales):
         return '{:.{}f}'.format(mediana, decimales)
     
 def mediaRecortada(muestra, decimales, porcentaje):
-
     n = len(muestra)
     muestra = sorted(muestra)
     numDatosRetirados = round(porcentaje*n)
-    
     muestra = muestra[numDatosRetirados:(n - numDatosRetirados)]
     mediaRecortada = sum(muestra)/(n - numDatosRetirados*2)
     return '{:.{}f}'.format(mediaRecortada, decimales)
