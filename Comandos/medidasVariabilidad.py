@@ -1,4 +1,7 @@
-from medidasPosición import media
+from sys import path
+path.append("../")
+
+from Comandos.medidasPosición import media
 
 def varianza(muestra, decimales):
     listaMedias = [float(media(muestra,decimales))]*len(muestra)

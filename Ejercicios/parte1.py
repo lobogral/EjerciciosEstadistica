@@ -1,6 +1,8 @@
-from medidasPosición import *
-from medidasVariabilidad import *
-from otrosComandos import *
+from sys import path
+path.append("../")
+
+from Comandos.medidasPosición import *
+from Comandos.otrosComandos import *
 
 print("1.1")
 muestra = [3.4, 2.5, 4.8, 2.9, 3.6,
@@ -43,13 +45,4 @@ print("Tratamiento")
 print("x_ =", media(muestra, 2))
 print("x~ =", mediana(muestra, 2))
 print("x_tr(10) =", mediaRecortada(muestra, 3, 0.1))
-
-print("")
-print("1.7")
-muestra = [3.4, 2.5, 4.8, 2.9, 3.6,
-           2.8, 3.3, 5.6, 3.7, 2.8,
-           4.4, 4.0, 5.2, 3.0, 4.8]
-print(muestra)
-print("Varianza de la muestra =", varianza(muestra, 3))
-print("Desviación estándar de la muestra =", desviaciónEstándar(muestra, 3))
 
