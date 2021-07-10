@@ -1,16 +1,19 @@
 from matplotlib import pyplot
+import random
 
-def dibujar(tipo, muestra, títuloVentana, unidadMedida):
+def dibujar(tipo, muestras, títuloVentana, unidadMedida):
     if tipo=="puntos":
-        dibujarPuntos(muestra, títuloVentana, unidadMedida)
+        dibujarPuntos(muestras, títuloVentana, unidadMedida)
 
-def dibujarPuntos(muestra, títuloVentana, unidadMedida):
-    muestra = sorted(muestra)
+def dibujarPuntos(muestras, títuloVentana, unidadMedida):
     fig, ax = pyplot.subplots(figsize=(9,1))
     fig.canvas.manager.set_window_title(títuloVentana)
-    pyplot.subplots_adjust(bottom=0.6)
+    colores = ['b','r','y']
+    for muestra, color in zip(muestras, colores):
+        muestra = sorted(muestra)
+        ax.hlines(0,muestra[0],muestra[len(muestra)-1], colors='k')
+        ax.plot(muestra, [0]*len(muestra), 'o', color=color);
     ax.set_xlabel(unidadMedida)
-    ax.hlines(0,muestra[0],muestra[len(muestra)-1], colors='k')
-    ax.plot(muestra, [0]*len(muestra), 'o', color='b');
     ax.get_yaxis().set_visible(False)
+    pyplot.subplots_adjust(bottom=0.6)
     pyplot.show()
