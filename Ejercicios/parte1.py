@@ -14,7 +14,7 @@ escribir(muestra)
 escribir("a) Tamaño de la muestra =", tamaño(muestra), "datos")
 escribir("b) Media de la muestra =", media(muestra, 3), "horas")
 escribir("c) Mediana de la muestra =", mediana(muestra, 3), "horas")
-dibujarGraficaPuntos(muestra, "d)", "pintura esmaltada","Tiempo secado (horas)")
+dibujar("puntos", muestra, "d) Análisis pintura esmaltada","Tiempo secado (horas)")
 escribir("e) x_tr(20) =", mediaRecortada(muestra, 3, 0.2), "horas")
 
 
