@@ -1,8 +1,7 @@
-from sys import path
-path.append("../")
+desde sistema importar ruta
+ruta.agregar("../")
 
-from Comandos.medidasVariabilidad import *
-from Comandos.otros import *
+desde Comandos.medidasVariabilidad importar *
 
 escribir("1.7")
 escribir("Mediciones tiempo de secado en pintura (horas)")

@@ -1,2 +1,0 @@
-tamaño = len
-escribir = print
