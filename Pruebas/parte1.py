@@ -14,26 +14,37 @@ escribir("a) Tamaño de la muestra =", tamaño(muestra), "datos")
 escribir("b) Media de la muestra =", media(muestra, 3), "horas")
 escribir("c) Mediana de la muestra =", mediana(muestra, 3), "horas")
 escribir("e) x_tr(20) =", mediaRecortada(muestra, 3, 0.2), "horas")
-#dibujar("puntos", [muestra], "d) Análisis pintura esmaltada","Tiempo secado (horas)")
+
+dibujar("puntos", 
+       [{'color': 'b', 'muestra': muestra}], 
+       "d) Análisis pintura esmaltada",
+       "Tiempo secado (horas)")
+
 
 escribir("")
 escribir("1.3")
 escribir("Mediciones resistencia a la tensión en aviones (psi)")
-escribir("Sin envejecimiento acelerado")
+escribir("Sin deterioro acelerado")
 muestra1 = [227, 222, 218, 217, 225,
             218, 216, 229, 228, 221]
 escribir(muestra1)
-escribir("Con envejecimiento acelerado")
+escribir("Con deterioro acelerado")
 muestra2 = [219, 214, 215, 211, 209,
             218, 203, 204, 201, 205]
 escribir(muestra2)
 escribir("c)")
-escribir("Media Envejecimiento =", media(muestra2, 2), "psi")
-escribir("Media NoEnvejecimiento =", media(muestra1, 2), "psi")
+escribir("Media Deterioro =", media(muestra2, 2), "psi")
+escribir("Media NoDeterioro =", media(muestra1, 2), "psi")
 escribir("d)")
-escribir("Mediana Envejecimiento =", mediana(muestra2, 2), "psi")
-escribir("Mediana NoEnvejecimiento =", mediana(muestra1, 2), "psi")
-#dibujar("puntos", [muestra1, muestra2], "a) Análisis aviones","Resistencia tensión (psi)")
+escribir("Mediana Deterioro =", mediana(muestra2, 2), "psi")
+escribir("Mediana NoDeterioro =", mediana(muestra1, 2), "psi")
+
+dibujar("puntos", 
+        [{'label': 'Sin deterioro', 'color': 'b', 'muestra': muestra1},
+         {'label': 'Con deterioro', 'color': 'r', 'muestra': muestra2}],
+        "a) Análisis aviones",
+        "Resistencia tensión (psi)")
+
 
 escribir("")
 escribir("1.5")
@@ -55,4 +66,9 @@ escribir("Tratamiento")
 escribir("x_ =", media(muestra2, 2), "mg/dL")
 escribir("x~ =", mediana(muestra2, 2), "mg/dL")
 escribir("x_tr(10) =", mediaRecortada(muestra2, 3, 0.1), "mg/dL")
-#dibujar("puntos", [muestra1, muestra2], "a) Análisis personas","Reducción colesterol (mg/dL)")
+
+dibujar("puntos", 
+        [{'label': 'Control', 'color': 'b', 'muestra': muestra1},
+         {'label': 'Tratamiento', 'color': 'r', 'muestra': muestra2}],
+        "a) Análisis personas",
+        "Reducción colesterol (mg/dL)")
