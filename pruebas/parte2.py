@@ -1,7 +1,7 @@
 desde sistema importar ruta
 ruta.agregar("../")
 
-desde Comandos.medidasVariabilidad importar *
+desde comandos.medidasVariabilidad importar *
 
 escribir("1.7")
 escribir("Mediciones tiempo de secado en pintura (horas)")

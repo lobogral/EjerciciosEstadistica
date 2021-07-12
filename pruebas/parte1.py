@@ -1,8 +1,8 @@
 desde sistema importar ruta
 ruta.agregar("../")
 
-desde Comandos.medidasPosición importar *
-desde Comandos.gráficas importar *
+desde comandos.medidasPosición importar *
+desde comandos.gráficas importar *
 
 escribir("1.1")
 escribir("Mediciones tiempo de secado en pintura (horas)")
