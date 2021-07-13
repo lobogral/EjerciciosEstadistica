@@ -40,8 +40,8 @@ escribir("Mediana Deterioro =", mediana(muestra2, 2), "psi")
 escribir("Mediana NoDeterioro =", mediana(muestra1, 2), "psi")
 
 dibujar("puntos", 
-        [{'label': 'Sin deterioro', 'color': 'b', 'muestra': muestra1},
-         {'label': 'Con deterioro', 'color': 'r', 'muestra': muestra2}],
+        [{'nombre': 'Sin deterioro', 'color': 'b', 'muestra': muestra1},
+         {'nombre': 'Con deterioro', 'color': 'r', 'muestra': muestra2}],
         "a) Análisis aviones",
         "Resistencia tensión (psi)")
 
@@ -68,7 +68,7 @@ escribir("x~ =", mediana(muestra2, 2), "mg/dL")
 escribir("x_tr(10) =", mediaRecortada(muestra2, 3, 0.1), "mg/dL")
 
 dibujar("puntos", 
-        [{'label': 'Control', 'color': 'b', 'muestra': muestra1},
-         {'label': 'Tratamiento', 'color': 'r', 'muestra': muestra2}],
+        [{'nombre': 'Control', 'color': 'b', 'muestra': muestra1},
+         {'nombre': 'Tratamiento', 'color': 'r', 'muestra': muestra2}],
         "a) Análisis personas",
         "Reducción colesterol (mg/dL)")
