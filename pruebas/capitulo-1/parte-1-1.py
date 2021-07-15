@@ -61,11 +61,11 @@ escribir("b)")
 escribir("Control")
 escribir("x_ =", media(muestra1, 2), "mg/dL")
 escribir("x~ =", mediana(muestra1, 2), "mg/dL")
-escribir("x_tr(10) =", mediaRecortada(muestra1, 3, 0.1), "mg/dL")
+escribir("x_tr(10) =", mediaRecortada(muestra1, 2, 0.1), "mg/dL")
 escribir("Tratamiento")
 escribir("x_ =", media(muestra2, 2), "mg/dL")
 escribir("x~ =", mediana(muestra2, 2), "mg/dL")
-escribir("x_tr(10) =", mediaRecortada(muestra2, 3, 0.1), "mg/dL")
+escribir("x_tr(10) =", mediaRecortada(muestra2, 2, 0.1), "mg/dL")
 
 dibujar("puntos", 
         [{'nombre': 'Control', 'color': 'b', 'muestra': muestra1},
