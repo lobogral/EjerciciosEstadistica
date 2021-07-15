@@ -1,9 +1,9 @@
 from matplotlib import pyplot
 import random
 
-def dibujar(tipo, muestras, títuloVentana, unidadMedida):
+def dibujar(tipo, diccionarios, títuloVentana, unidadMedida):
     if tipo=="puntos":
-        dibujarPuntos(muestras, títuloVentana, unidadMedida)
+        dibujarPuntos(diccionarios, títuloVentana, unidadMedida)
 
 def dibujarPuntos(diccionarios, títuloVentana, unidadMedida):
     fig, ax = pyplot.subplots(figsize=(9,1))
@@ -13,11 +13,8 @@ def dibujarPuntos(diccionarios, títuloVentana, unidadMedida):
         muestra = diccionario['muestra']
         muestra = sorted(muestra)
         ax.hlines(0,muestra[0],muestra[len(muestra)-1], colors='k')
-        if(len(diccionarios)==1):
-            ax.plot(muestra, [0]*len(muestra), 'o', color=color)
-        else:
-            label = diccionario['nombre']
-            ax.plot(muestra, [0]*len(muestra), 'o', color=color, label=label)
+        label = "" if len(diccionarios)==1 else diccionario['nombre']
+        ax.plot(muestra, [0]*len(muestra), 'o', color=color, label=label)
     if(len(diccionarios)>1):
         pyplot.legend(bbox_to_anchor =(1.05, 1), loc='upper left')
     ax.set_xlabel(unidadMedida)
