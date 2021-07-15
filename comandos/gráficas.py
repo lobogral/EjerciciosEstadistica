@@ -12,7 +12,7 @@ def dibujarPuntos(diccionarios, títuloVentana, unidadMedida):
         color = diccionario['color']
         muestra = diccionario['muestra']
         muestra = sorted(muestra)
-        label = "" if len(diccionarios)==1 else diccionario['nombre']
+        label = diccionario['nombre'] if len(diccionarios)>1 else ""
         ax.hlines(0,muestra[0],muestra[len(muestra)-1], colors='k')
         ax.plot(muestra, [0]*len(muestra), 'o', color=color, label=label)
     if len(diccionarios)>1:
