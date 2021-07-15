@@ -5,4 +5,5 @@ intervalos = [0, 1, 2, 3, 4, 5]
 
 plt.title("Ejemplo calificaciones colombia")
 plt.hist(valores, intervalos, edgecolor = 'black')
+plt.xlim(0,5)
 plt.show()
