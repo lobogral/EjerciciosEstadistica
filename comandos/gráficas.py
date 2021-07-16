@@ -11,9 +11,8 @@ def dibujarPuntos(diccionarios, títuloVentana, unidadMedida):
     for diccionario in diccionarios:
         color = diccionario['color']
         muestra = diccionario['muestra']
-        muestra = sorted(muestra)
         label = diccionario['nombre'] if len(diccionarios)>1 else ""
-        ax.hlines(0,muestra[0],muestra[len(muestra)-1], colors='k')
+        ax.hlines(0,min(muestra),max(muestra), colors='k')
         ax.plot(muestra, [0]*len(muestra), 'o', color=color, label=label)
     if len(diccionarios)>1:
         pyplot.legend(bbox_to_anchor =(1.05, 1), loc='upper left')
