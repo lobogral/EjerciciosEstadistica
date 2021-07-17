@@ -8,7 +8,7 @@ def dibujar(tipo, diccionarios, títuloVentana, unidadMedida):
 def dibujarPuntos(diccionarios, títuloVentana, unidadMedida):
     limiteSuperior = establecerLimiteSuperior(diccionarios)
     diccionarios = agregarValoresy(diccionarios)
-    plt.figure(títuloVentana, figsize=(9,1.5))
+    plt.figure(títuloVentana, figsize=(9,0.9+0.15*limiteSuperior))
     for diccionario in diccionarios:
         color = diccionario['color']
         valoresx = diccionario['valoresx']
