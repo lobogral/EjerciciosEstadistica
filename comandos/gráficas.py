@@ -23,14 +23,11 @@ def dibujarPuntos(diccionarios, títuloVentana, unidadMedida):
     plt.show()
 
 def agregarValoresy(diccionarios):
-    valoresy = []
-    valoresx = []
-    inicio = 0
-    for diccionario in diccionarios:
+    valsx = [val for dic in diccionarios for val in dic['muestra']]
+    valsy = [valsx[0:i+1].count(valsx[i])-1 for i in range(len(valsx))]
+    numElem = len(valsy)//len(diccionarios)
+    listasy = [valsy[i:i+numElem] for i in range(0, len(valsy), numElem)]
+    for diccionario, listay in zip(diccionarios,listasy):
         diccionario['valoresx'] = diccionario.pop('muestra')
-        valoresx += diccionario['valoresx']
-        for i in range(inicio, len(valoresx)):
-            valoresy += [valoresx[0:i+1].count(valoresx[i])-1]
-        diccionario['valoresy'] = valoresy[inicio:len(valoresx)]
-        inicio += len(valoresx)
+        diccionario['valoresy'] = listay
     return diccionarios
