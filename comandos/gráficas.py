@@ -13,8 +13,7 @@ def dibujarPuntos(diccionarios, títuloVentana, unidadMedida):
         label = diccionario['nombre'] if len(diccionarios)>1 else ""
         plt.hlines(0,min(muestra),max(muestra), colors='k')
         plt.plot(muestra, [0]*len(muestra), 'o', color=color, label=label)
-    if len(diccionarios)>1:
-        plt.legend(bbox_to_anchor =(1.05, 1), loc='upper left')
+    if len(diccionarios)>1: plt.legend(bbox_to_anchor =(1.05, 1), loc='upper left')
     plt.xlabel(unidadMedida)
     plt.gca().axes.get_yaxis().set_visible(False)
     plt.tight_layout()
