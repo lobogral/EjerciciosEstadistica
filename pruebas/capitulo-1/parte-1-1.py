@@ -2,8 +2,6 @@ desde medidasPosición importar *
 desde gráficas importar *
 desde redondeo importar *
 
-definirRedondeoMitadArriba()
-
 escribir("1.1")
 escribir("Mediciones tiempo de secado en pintura (horas)")
 muestra = [3.4, 2.5, 4.8, 2.9, 3.6,
