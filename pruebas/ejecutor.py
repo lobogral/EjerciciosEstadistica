@@ -1,7 +1,8 @@
 from sys import path
-path.append("../comandos/")
 import re
 import sys
+
+path.append("../comandos/")
 
 programaTxt = open(sys.argv[1], 'r', encoding='utf8')
 texto = programaTxt.readlines()
