@@ -11,14 +11,26 @@ rango = 7.0
 numDivisiones = 7
 
 div = rango/numDivisiones
-print("Int. Cls.    Pnt. Med.    Frec.    Frec. Rel.")
+
+strIntCls = "Int. Cls.     "
+strPntMed = "Pnt. Med.    "
+strFrec = "Frec.    "
+strFrecRel = "Frec. Rel."
+print(f'{strIntCls}{strPntMed}{strFrec}{strFrecRel}')
 for i in range(numDivisiones):
+    # Hacen los cálculos
     minCls = div*i
     maxCls = div*(i+1) - paso
-    puntoMedio = (minCls+maxCls)/2
+    pntMed = redondear((minCls+maxCls)/2,2)
     frec = len([dato for dato in datos if minCls<=dato<=maxCls])
     frecRel = redondear(frec/len(datos), 3)
-    print(f'{minCls}-{maxCls}', end="")
-    print('     ', puntoMedio, end="")
-    print('        ', frec, end="")
-    print('       ', frecRel)
+
+    # Hacen las impresiones
+    intCls = f'{redondear(minCls, 1)}-{redondear(maxCls, 1)}'
+    print(intCls, end="")
+    espacios = len(strIntCls) - len(intCls) + len(str(pntMed))
+    print('{:>{}}'.format(pntMed, espacios), end="")
+    espacios = len(strPntMed) - len(str(pntMed)) + len(str(frec))
+    print('{:>{}}'.format(frec, espacios), end="")
+    espacios = len(strFrec) - len(str(frec)) + len(str(frecRel))
+    print('{:>{}}'.format(frecRel, espacios ))
