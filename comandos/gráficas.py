@@ -1,7 +1,4 @@
-from sys import path
-path.append("../")
-
-from comandos.tiposGráficas import puntos
+from tiposGráficas import puntos
 
 def dibujar(tipo, diccionarios, títuloVentana, unidadMedida):
     if tipo=="puntos":

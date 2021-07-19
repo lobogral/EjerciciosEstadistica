@@ -1,8 +1,5 @@
-desde sistema importar ruta
-ruta.agregar("../")
-
-desde comandos.medidasVariabilidad importar *
-desde comandos.redondeo importar *
+desde medidasVariabilidad importar *
+desde redondeo importar *
 
 definirRedondeoMitadArriba()
 

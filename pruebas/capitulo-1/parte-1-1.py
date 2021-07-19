@@ -1,9 +1,6 @@
-desde sistema importar ruta
-ruta.agregar("../")
-
-desde comandos.medidasPosición importar *
-desde comandos.gráficas importar *
-desde comandos.redondeo importar *
+desde medidasPosición importar *
+desde gráficas importar *
+desde redondeo importar *
 
 definirRedondeoMitadArriba()
 
