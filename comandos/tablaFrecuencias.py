@@ -27,19 +27,19 @@ def imprimirTabla(datos, paso, mínimo, máximo, numDivisiones):
 
 def establecerDatosHist(datos, paso, mínimo, máximo, numDivisiones):
     datosHist = {}
-    pntMed = []
-    frecRel = []
+    valoresx = []
+    valoresy = []
     div = (máximo-mínimo)/numDivisiones
     for i in range(numDivisiones):
         # Hacen los cálculos
         minCls = mínimo + div*i
         maxCls = mínimo + div*(i+1) - paso
-        pntMed += [str((minCls+maxCls)/2)]
+        valoresx += [str((minCls+maxCls)/2)]
         frec = len([dato for dato in datos if minCls<=dato<=maxCls])
-        frecRel += [redondear(frec/len(datos), 3)]
+        valoresy += [redondear(frec/len(datos), 3)]
     # Asigna los valores
-    datosHist['Punto medio'] = pntMed
-    datosHist['Frecuencia relativa'] = frecRel
+    datosHist['valoresx'] = valoresx
+    datosHist['valoresy'] = valoresy
     return datosHist
 
 datos = [2.0, 3.0, 0.3, 3.3, 1.3, 0.4,
