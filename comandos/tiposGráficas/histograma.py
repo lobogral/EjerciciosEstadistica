@@ -1,9 +1,7 @@
 import matplotlib.pyplot as plt
 
-valores = [1.2, 1.4, 1, 1.3, 2.5, 3.2, 1, 5, 3.5, 4.2, 0.1]
-intervalos = [0, 1, 2, 3, 4, 5]
-
-plt.title("Ejemplo calificaciones colombia")
-plt.hist(valores, intervalos, edgecolor = 'black')
-plt.xlim(0,5)
-plt.show()
+def dibujar(diccionario):
+    pntMed = diccionario['Punto medio']
+    frecRel = diccionario['Frecuencia relativa']
+    plt.bar(pntMed, frecRel, width=1, edgecolor='black')
+    plt.show()
