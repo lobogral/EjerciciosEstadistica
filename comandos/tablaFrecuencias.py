@@ -1,5 +1,7 @@
-from redondeo import *
 from tiposGráficas import histograma
+from decimal import Decimal, getcontext, ROUND_HALF_UP
+context = getcontext()
+context.rounding = ROUND_HALF_UP
 
 def __obtenerTabla(datos, paso, mínimo, máximo, numDivisiones):
     tabla = []   
@@ -12,7 +14,7 @@ def __obtenerTabla(datos, paso, mínimo, máximo, numDivisiones):
             'intCls': f'{minCls}-{maxCls}',
             'pntMed': str((minCls+maxCls)/2),
             'frec': frec,
-            'frecRel': redondear(frec/len(datos), 3)
+            'frecRel': round(Decimal(str(frec/len(datos))), 3)
         }]   
     return tabla
 
