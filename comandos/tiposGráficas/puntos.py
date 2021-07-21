@@ -1,8 +1,8 @@
 from matplotlib import pyplot as plt
 
 def dibujar(diccionarios, títuloVentana, unidadMedida):
-    limiteSuperior = establecerLimiteSuperior(diccionarios)
-    diccionarios = agregarValoresy(diccionarios)
+    limiteSuperior = __establecerLimiteSuperior(diccionarios)
+    diccionarios = __establecerValores(diccionarios)
     plt.figure(títuloVentana, figsize=(9,0.9+0.15*limiteSuperior))
     for diccionario in diccionarios:
         color = diccionario['color']
@@ -18,7 +18,7 @@ def dibujar(diccionarios, títuloVentana, unidadMedida):
     plt.tight_layout()
     plt.show()
 
-def agregarValoresy(diccionarios):
+def __establecerValores(diccionarios):
     valsx = [val for dic in diccionarios for val in dic['muestra']]
     valsy = [valsx[0:i+1].count(valsx[i])-1 for i in range(len(valsx))]
     numElem = len(valsy)//len(diccionarios)
@@ -28,6 +28,6 @@ def agregarValoresy(diccionarios):
         diccionario['valoresy'] = listay
     return diccionarios
 
-def establecerLimiteSuperior(diccionarios):
+def __establecerLimiteSuperior(diccionarios):
     valsx = [val for dic in diccionarios for val in dic['muestra']]
     return max([valsx.count(val) for val in valsx])

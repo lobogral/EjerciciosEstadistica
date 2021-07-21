@@ -1,7 +1,7 @@
 from redondeo import *
 from tiposGráficas import histograma
 
-def obtenerTabla(datos, paso, mínimo, máximo, numDivisiones):
+def __obtenerTabla(datos, paso, mínimo, máximo, numDivisiones):
     tabla = []   
     div = (máximo-mínimo)/numDivisiones
     for i in range(numDivisiones):
@@ -17,7 +17,7 @@ def obtenerTabla(datos, paso, mínimo, máximo, numDivisiones):
     return tabla
 
 def imprimirTabla(datos, paso, mínimo, máximo, numDivisiones):
-    tabla = obtenerTabla(datos, paso, mínimo, máximo, numDivisiones)
+    tabla = __obtenerTabla(datos, paso, mínimo, máximo, numDivisiones)
     strIntCls = "Int. Cls.     "
     strPntMed = "Pnt. Med.    "
     strFrec = "Frec.    "
@@ -37,7 +37,7 @@ def imprimirTabla(datos, paso, mínimo, máximo, numDivisiones):
         print('{:>{}}'.format(frecRel, espacios))
 
 def establecerDatosHist(datos, paso, mínimo, máximo, numDivisiones):
-    tabla = obtenerTabla(datos, paso, mínimo, máximo, numDivisiones)
+    tabla = __obtenerTabla(datos, paso, mínimo, máximo, numDivisiones)
     hist = {}
     hist['valoresx'] = [diccionario['pntMed'] for diccionario in tabla]
     hist['valoresy'] = [diccionario['frecRel'] for diccionario in tabla]
