@@ -1,9 +1,19 @@
 from sys import path
 import re
 import sys
+import os
+
+os.chdir('..')
+if (not os.path.isdir('módulos')): 
+    os.mkdir('módulos')
+os.chdir('módulos')
+if (not os.path.isdir('Redondeo')):
+    os.system('git clone https://github.com/lobogral/Redondeo.git')
+os.chdir('../pruebas/')
+path.append('../módulos/Redondeo/')
+
 
 path.append("../comandos/")
-
 programaTxt = open(sys.argv[1], 'r', encoding='utf8')
 texto = programaTxt.readlines()
 programaTxt.close()
