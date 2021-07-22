@@ -44,7 +44,7 @@ def establecerDatosHist(datos, paso, mínimo, máximo, numDivisiones):
     hist['valoresx'] = [diccionario['pntMed'] for diccionario in tabla]
     hist['valoresy'] = [diccionario['frecRel'] for diccionario in tabla]
     return hist
-
+"""
 datos = [2.0, 3.0, 0.3, 3.3, 1.3, 0.4,
          0.2, 6.0, 5.5, 6.5, 0.2, 2.3,
          1.5, 4.0, 5.9, 1.8, 4.7, 0.7,
@@ -62,3 +62,4 @@ datos  = [2.2, 4.1, 3.5, 4.5, 3.2, 3.7, 3.0, 2.6,
 
 imprimirTabla(datos, 0.1, 1.5, 5.0, 7)
 histograma.dibujar(establecerDatosHist(datos, 0.1, 1.5, 5.0, 7))
+"""
