@@ -1,7 +1,9 @@
-from medidasPosición import media
+def rango(muestra):
+    return max(muestra)-min(muestra)
 
 def varianza(muestra):
-    listaMedias = [media(muestra)]*len(muestra)
+    media = sum(muestra)/len(muestra)
+    listaMedias = [media]*len(muestra)
     cuadrados = [(x - y)**2 for x, y in zip(muestra, listaMedias)]
     return sum(cuadrados)/(len(cuadrados)-1)
     

@@ -16,5 +16,7 @@ imprimirTabla(muestra, 0.1, 0.0, 7.0, 7)
 escribir("c)")
 escribir("Media de la muestra =", 
          redondear(media(muestra), 4), "años")
+escribir("Rango de la muestra =",
+         rango(muestra), "años")
 escribir("Desviación estándar de la muestra =",
          redondear(desviaciónEstándar(muestra), 4), "años")
