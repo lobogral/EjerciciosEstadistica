@@ -9,8 +9,11 @@ if (not os.path.isdir('módulos')):
 os.chdir('módulos')
 if (not os.path.isdir('Redondeo')):
     os.system('git clone https://github.com/lobogral/Redondeo.git')
+if (not os.path.isdir('ComandosEstadistica')):
+    os.system('git clone https://github.com/lobogral/ComandosEstadistica.git')
 os.chdir('../pruebas/')
 path.append('../módulos/Redondeo/')
+path.append('../módulos/ComandosEstadistica/')
 
 
 path.append("../comandos/")
