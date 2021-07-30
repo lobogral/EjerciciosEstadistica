@@ -3,8 +3,8 @@
 
 import re
 
-cap = argv[2]
-parte = argv[3]
+cap = argv[1]
+parte = argv[2]
 ruta = 'capitulo-' + cap + '/parte-' + cap + '-' + parte + '.py'
 programa = open(ruta, 'r', encoding='utf8')
 texto = programa.readlines()
