@@ -72,7 +72,6 @@ escribir("|", F, ", x >= 1")
 P = redondear(1 - F.subs(x,4).evalf(), 4)
 escribir("c) P(X > 4) =", P)
 
-
 escribir("")
 escribir("3.31")
 f = Fracción(1,4)*exp(-y/4)
