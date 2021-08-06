@@ -22,8 +22,9 @@ escribir("Rango de la muestra =",
          rango(muestra), "años")
 escribir("Desviación estándar de la muestra =",
          redondear(desviaciónEstándar(muestra), 4), "años")
-
+"""
 dibujar("histograma", 
         establecerDatosHist(muestra, 0.1, 0.0, 7.0, 7),
         "Análisis bombas de combustible",
         "Vida útil (años)")
+"""

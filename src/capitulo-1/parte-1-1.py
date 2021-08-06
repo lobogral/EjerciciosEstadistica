@@ -12,12 +12,12 @@ escribir("a) Tamaño de la muestra =", tamaño(muestra), "datos")
 escribir("b) Media de la muestra =", redondear(media(muestra), 3), "horas")
 escribir("c) Mediana de la muestra =", mediana(muestra), "horas")
 escribir("e) x_tr(20) =", redondear(mediaRecortada(muestra, 0.2), 3), "horas")
-
+"""
 dibujar("puntos", 
        [{'color': 'b', 'muestra': muestra}], 
        "d) Análisis pintura esmaltada",
        "Tiempo secado (horas)")
-
+"""
 
 escribir("")
 escribir("1.3")
@@ -36,13 +36,13 @@ escribir("Media NoDeterioro =", redondear(media(muestra1), 2), "psi")
 escribir("d)")
 escribir("Mediana Deterioro =", redondear(mediana(muestra2), 2), "psi")
 escribir("Mediana NoDeterioro =", redondear(mediana(muestra1), 2), "psi")
-
+"""
 dibujar("puntos", 
         [{'nombre': 'Sin deterioro', 'color': 'b', 'muestra': muestra1},
          {'nombre': 'Con deterioro', 'color': 'r', 'muestra': muestra2}],
         "a) Análisis aviones",
         "Resistencia tensión (psi)")
-
+"""
 
 escribir("")
 escribir("1.5")
@@ -64,9 +64,10 @@ escribir("Tratamiento")
 escribir("x_ =", redondear(media(muestra2), 2), "mg/dL")
 escribir("x~ =", redondear(mediana(muestra2), 2), "mg/dL")
 escribir("x_tr(10) =", redondear(mediaRecortada(muestra2, 0.1), 2), "mg/dL")
-
+"""
 dibujar("puntos", 
         [{'nombre': 'Control', 'color': 'b', 'muestra': muestra1},
          {'nombre': 'Tratamiento', 'color': 'r', 'muestra': muestra2}],
         "a) Análisis personas",
         "Reducción colesterol (mg/dL)")
+"""

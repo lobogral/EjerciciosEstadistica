@@ -4,6 +4,7 @@ S = {'1HH', '1HT', '1TH', '1TT', '2H', '2T',
      '5HH', '5HT', '5TH', '5TT', '6H', '6T'}
 escribir("S =", S)
 
+escribir("")
 escribir("2.9")
 S = {'1HH', '1HT', '1TH', '1TT', '2H', '2T', 
      '3HH', '3HT', '3TH', '3TT', '4H', '4T', 
@@ -17,6 +18,7 @@ escribir("c) A' =", S - A)
 escribir("d) A' ∩ B =", (S - A) & B)
 escribir("e) A ∪ B =", A | B)
 
+escribir("")
 escribir("2.11")
 S = {'M1M2', 'M1F1', 'M1F2', 
      'M2M1', 'M2F1', 'M2F2', 
@@ -34,6 +36,7 @@ escribir("d) C =", C)
 escribir("e) A ∩ B =", A & B)
 escribir("f) A ∪ C =", A | C)
 
+escribir("")
 escribir("2.15")
 S = {'cobre', 'sodio',
 'nitrógeno', 'potasio', 'uranio', 'oxígeno', 'cinc'}
