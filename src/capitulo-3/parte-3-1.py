@@ -20,7 +20,7 @@ escribir("a) Área bajo curva =", integrar(f, (x,-oo,oo)))
 a = 2
 b = Fracción('2.5')
 escribir("b) P(2 < X < 2.5) =", integrar(f, (x,a,b)))
-a = 1
+a = -oo
 b = Fracción('1.6')
 escribir("c) P(X <= 1.6) =", float(integrar(f, (x,a,b))))
 
@@ -73,9 +73,9 @@ escribir("3.31")
 f = Trozos((Fracción(1,4)*exp(-y/4), (x>=0)), 
            (0,otroCaso))
 f = Fracción(1,4)*exp(-y/4)
-a = 0
-b = 6
-P = redondear(1-integrar(f, (y,a,b)).evalf(),4)
+a = 6
+b = oo
+P = redondear(integrar(f, (y,a,b)).evalf(),4)
 escribir("a) P(Y > 6) =", P)
 a = 0
 b = 1
