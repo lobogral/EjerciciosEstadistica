@@ -5,6 +5,17 @@ desde fracciones importar Fracción
 desde redondeo importar redondear
 desde distribuciónContinua importar *
 
+escribir("3.7")
+f = Trozos((x, (0<x) & (x<1)),
+           (2-x, (1<=x) & (x<2)), 
+           (0,otroCaso))
+b = 1.2
+escribir("a) P(X < 1.2) =", redondear(ProbAcum(f,x,b),2))
+a = 0.5
+b = 1
+escribir("b) P(0.5 < X < 1) =", redondear(Prob(f,x,a,b),3))
+
+escribir("")
 escribir("3.9")
 f = Trozos((Fracción(2,5)*(x+2), (0<x) & (x<1)), 
            (0,otroCaso))
