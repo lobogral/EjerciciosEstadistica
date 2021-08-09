@@ -1,4 +1,4 @@
-desde sympy importar Trozos, C, Rational
+desde sympy importar C, Trozos
 desde sympy.abc importar x, y
 desde sympy.functions importar exp
 desde fracciones importar Fracción
