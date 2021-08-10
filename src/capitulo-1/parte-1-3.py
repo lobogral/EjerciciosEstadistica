@@ -2,7 +2,7 @@ desde medidasPosición importar *
 desde medidasVariabilidad importar *
 desde tablaFrecuencias importar *
 desde redondeo importar *
-desde gráficas importar *
+desde gráficas importar histograma
 
 escribir("1.19")
 escribir("Vida útil de 30 bombas de combustible similares (años)")
@@ -23,7 +23,7 @@ escribir("Rango de la muestra =",
 escribir("Desviación estándar de la muestra =",
          redondear(desviaciónEstándar(muestra), 4), "años")
 """
-dibujar("histograma", 
+histograma.dibujar( 
         establecerDatosHist(muestra, 0.1, 0.0, 7.0, 7),
         "Análisis bombas de combustible",
         "Vida útil (años)")

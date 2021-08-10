@@ -1,5 +1,5 @@
 desde medidasPosición importar *
-desde gráficas importar *
+desde gráficas importar puntos
 desde redondeo importar *
 
 escribir("1.1")
@@ -13,7 +13,7 @@ escribir("b) Media de la muestra =", redondear(media(muestra), 3), "horas")
 escribir("c) Mediana de la muestra =", mediana(muestra), "horas")
 escribir("e) x_tr(20) =", redondear(mediaRecortada(muestra, 0.2), 3), "horas")
 """
-dibujar("puntos", 
+puntos.dibujar( 
        [{'color': 'b', 'muestra': muestra}], 
        "d) Análisis pintura esmaltada",
        "Tiempo secado (horas)")
@@ -37,7 +37,7 @@ escribir("d)")
 escribir("Mediana Deterioro =", redondear(mediana(muestra2), 2), "psi")
 escribir("Mediana NoDeterioro =", redondear(mediana(muestra1), 2), "psi")
 """
-dibujar("puntos", 
+puntos.dibujar( 
         [{'nombre': 'Sin deterioro', 'color': 'b', 'muestra': muestra1},
          {'nombre': 'Con deterioro', 'color': 'r', 'muestra': muestra2}],
         "a) Análisis aviones",
@@ -65,7 +65,7 @@ escribir("x_ =", redondear(media(muestra2), 2), "mg/dL")
 escribir("x~ =", redondear(mediana(muestra2), 2), "mg/dL")
 escribir("x_tr(10) =", redondear(mediaRecortada(muestra2, 0.1), 2), "mg/dL")
 """
-dibujar("puntos", 
+puntos.dibujar( 
         [{'nombre': 'Control', 'color': 'b', 'muestra': muestra1},
          {'nombre': 'Tratamiento', 'color': 'r', 'muestra': muestra2}],
         "a) Análisis personas",
