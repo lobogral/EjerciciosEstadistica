@@ -1,6 +1,7 @@
 desde sympy importar C, Trozos, oo
 desde sympy.abc importar x, y
 desde fracciones importar Fracción
+desde redondeo importar redondear
 desde distribuciones importar conjuntaContinua como conjCont
 
 escribir("3.41")
@@ -9,12 +10,23 @@ f = Trozos((24*x*y, (0<=x) & (x<=1) &
                     (x + y <= 1)),             
             (0, otroCaso))
 
+intervalo = x + y < Fracción(1,2)
+prob = conjCont.Prob(f, intervalo)
+escribir("a) P(X + Y < 1/2) =", prob)
 escribir("b) g(x) =", conjCont.ProbMarginal(f,x))
 valDep1 = -oo
 valDep2 = Fracción(1,8)
 valIndep = Fracción(3,4)
 prob = conjCont.ProbCondicional(f, valDep1, valDep2, x, valIndep)
 escribir("c) P( Y < 1/8 | X = 3/4 ) =", prob)
+
+escribir("")
+escribir("3.45")
+f = Trozos((1/y, (0<x) & (x<y) & (y<1)),        
+           (0, otroCaso))
+intervalo = x + y > 1/2
+prob = conjCont.Prob(f, intervalo)
+escribir("P(X + Y > 1/2) =", redondear(prob, 4))
 
 escribir("")
 escribir("3.47")
