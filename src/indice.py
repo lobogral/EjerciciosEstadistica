@@ -11,14 +11,12 @@ texto = programa.readlines()
 programa.close()
 
 texto = "".join(texto)
-texto = re.sub('C\(', 'binomial(', texto)
-texto = re.sub('importar C,', 'importar binomial,', texto)
 texto = re.sub('desde (.+) importar (.+) como (.+)', 'from \g<1> import \g<2> as \g<3>', texto)
 texto = re.sub('desde (.+) importar (.+)', 'from \g<1> import \g<2>', texto)
+
 texto = re.sub('escribir\(', 'print(', texto)
 texto = re.sub('tamaño\(', 'len(', texto)
-texto = re.sub('Fracción', 'Fraction', texto)
-texto = re.sub('fracciones', 'fractions', texto)
-texto = re.sub('Trozos', 'Piecewise', texto)
-texto = re.sub('otroCaso', 'True', texto)
+
+texto = re.sub(', otroCaso', ', True', texto)
+texto = re.sub('=Verdadero', '=True', texto)
 exec(texto)

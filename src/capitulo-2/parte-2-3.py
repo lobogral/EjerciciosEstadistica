@@ -1,5 +1,5 @@
 desde decimal importar Decimal
-desde fracciones importar Fracción
+desde fractions importar Fraction como Fracción
 desde conteoPM importar *
 desde redondeo importar *
 

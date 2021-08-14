@@ -1,8 +1,13 @@
-desde sympy importar C, Trozos
-desde sympy.abc importar x, y, z
-desde fracciones importar Fracción
+desde sympy importar binomial como C
+desde sympy importar Piecewise como Trozos
+desde sympy importar Symbol como Simbolo
+desde fractions importar Fraction como Fracción
 desde redondeo importar redondear
 desde distribuciones importar conjuntaContinua como conjCont
+
+x = Simbolo("x", real=Verdadero)
+y = Simbolo("y", real=Verdadero)
+z = Simbolo("z", real=Verdadero)
 
 escribir("3.41")
 f = Trozos((24*x*y, (0<=x) & (x<=1) &
@@ -44,6 +49,10 @@ escribir("")
 escribir("3.47")
 f = Trozos((2, (0<x) & (x<y) & (y<1)),            
            (0, otroCaso))
+escribir("a)")
+escribir("g(x) =", conjCont.ProbMarginal(f,x))
+escribir("h(y) =", conjCont.ProbMarginal(f,y))
+escribir("g(x)h(y) != f(x,y), Dependientes")
 intervaloDep = (Fracción(1,4) < x) & (x < Fracción(1,2))
 valIndep = Fracción(3,4)
 prob = conjCont.ProbCondicional(f, intervaloDep, y, valIndep)

@@ -1,7 +1,8 @@
-desde sympy importar C, Trozos
+desde sympy importar Piecewise como Trozos
+desde sympy importar binomial como C
 desde sympy.abc importar x, y
 desde sympy.functions importar exp
-desde fracciones importar Fracción
+desde fractions importar Fraction como Fracción
 desde redondeo importar redondear
 desde distribuciones importar continua como cont
 desde distribuciones importar discreta como disc
@@ -18,7 +19,7 @@ escribir("")
 escribir("3.7")
 f = Trozos((x, (0<x) & (x<1)),
            (2-x, (1<=x) & (x<2)), 
-           (0,otroCaso))
+           (0, otroCaso))
 b = 1.2
 escribir("a) P(X < 1.2) =", redondear(cont.ProbAcum(f,x,b),2))
 a = 0.5
@@ -28,7 +29,7 @@ escribir("b) P(0.5 < X < 1) =", redondear(cont.Prob(f,x,a,b),3))
 escribir("")
 escribir("3.9")
 f = Trozos((Fracción(2,5)*(x+2), (0<x) & (x<1)), 
-           (0,otroCaso))
+           (0, otroCaso))
 escribir("a) Área bajo curva =", cont.ProbTotal(f,x))
 a = Fracción(1,4)
 b = Fracción(1,2)
@@ -61,7 +62,7 @@ escribir("b) P(0 < X <= 2) =", Fb-Fa)
 escribir("")
 escribir("3.17")
 f = Trozos((Fracción(1,2), (1<x) & (x<3)), 
-           (0,otroCaso))
+           (0, otroCaso))
 escribir("a) Área bajo curva =", cont.ProbTotal(f,x))
 a = 2
 b = Fracción('2.5')
@@ -72,7 +73,7 @@ escribir("c) P(X <= 1.6) =", float(cont.ProbAcum(f,x,b)))
 escribir("")
 escribir("3.19")
 f = Trozos((Fracción(1,2), (1<x) & (x<3)), 
-           (0,otroCaso))
+           (0, otroCaso))
 F = cont.ProbAcum(f,x)
 escribir("F(x) =", F)
 Fb = F.subs(x, Fracción('2.5'))
@@ -82,7 +83,7 @@ escribir("P(2 < X < 2.5) =", Fb-Fa)
 escribir("")
 escribir("3.21")
 f = Trozos((x**Fracción(1,2), (0<x) & (x<1)), 
-           (0,otroCaso))
+           (0, otroCaso))
 k = 1/cont.ProbTotal(f,x)
 escribir("a) k =", k)
 escribir("b)")
@@ -108,7 +109,7 @@ escribir("b) P(-1 <= X < 3) =", Fb-Fa)
 escribir("")
 escribir("3.27")
 f = Trozos((Fracción(1,2000)*exp(-x/2000), (x>=0)), 
-           (0,otroCaso))
+           (0, otroCaso))
 F = cont.ProbAcum(f,x)
 escribir("a) F(x) =", F)
 P = redondear(1 - F.subs(x,1000).evalf(), 4)
@@ -119,7 +120,7 @@ escribir("c) P(X <= 2000) =", P)
 escribir("")
 escribir("3.29")
 f = Trozos((3*x**(-4), (x>1)), 
-           (0,otroCaso))
+           (0, otroCaso))
 escribir("a) Área bajo curva =", cont.ProbTotal(f,x))
 F = cont.ProbAcum(f,x)
 escribir("b) F(x) =", F)
@@ -129,7 +130,7 @@ escribir("c) P(X > 4) =", P)
 escribir("")
 escribir("3.31")
 f = Trozos((Fracción(1,4)*exp(-y/4), (y>=0)), 
-           (0,otroCaso))
+           (0, otroCaso))
 b = 6
 P = redondear(1 - cont.ProbAcum(f,y,b).evalf(), 4)
 escribir("a) P(Y > 6) =", P)
@@ -141,7 +142,7 @@ escribir("b) P(0 < Y < 1) =", P)
 escribir("")
 escribir("3.33")
 f = Trozos(((y**4)*(1-y)**3, (0<=y) & (y<=1)), 
-           (0,otroCaso))
+           (0, otroCaso))
 k = 1/cont.ProbTotal(f,y)
 escribir("a) k =", k)
 a = 0
