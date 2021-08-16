@@ -66,9 +66,11 @@ escribir("P( D | I ) =", prob)
 
 escribir("")
 escribir("2.91")
+escribir("C -> Casa abierta")
+escribir("L -> Llaves abran casa")
 prob = Fracción(4,10)
 prob += Fracción(6,10)*Fracción(C(1,1)*C(7,2),C(8,3))
-escribir("P =", prob)
+escribir("P(C ∪ (C' ∩ A)) = P(C) + P(C')P(A | C') =", prob)
 
 escribir("")
 escribir("2.93")
