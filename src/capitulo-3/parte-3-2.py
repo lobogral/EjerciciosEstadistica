@@ -2,13 +2,32 @@ desde sympy importar binomial como C
 desde sympy importar Piecewise como Trozos
 desde sympy importar Symbol como Simbolo
 desde fractions importar Fraction como Fracción
+desde decimal importar Decimal
 desde redondeo importar redondear
 desde distribuciones importar conjuntaContinua como conjCont
+desde distribuciones importar conjuntaDiscreta como conjDisc
 
 x = Simbolo("x", real=Verdadero)
 y = Simbolo("y", real=Verdadero)
 z = Simbolo("z", real=Verdadero)
 
+escribir("3.37")
+f = x*y
+distribución = conjDisc.Func2Dist(f, [1,2,3], [1,2,3])
+escribir("a) c =", 1/conjDisc.ProbTotal(distribución))
+f = abs(x - y)
+distribución = conjDisc.Func2Dist(f, [-2,0,2], [-2,3])
+escribir("b) c =", 1/conjDisc.ProbTotal(distribución))
+
+escribir("")
+escribir("3.39")
+f = (C(3,x)*C(2,y)*C(3,4-x-y))/C(8,4)
+distribución = conjDisc.Func2Dist(f, [0,1,2,3], [0,1,2])
+escribir("a) ", distribución)
+prob = conjDisc.Prob(distribución, x + y <=2)
+escribir("b) P(X + Y <= 2) =", prob)
+
+escribir("")
 escribir("3.41")
 f = Trozos((24*x*y, (0<=x) & (x<=1) &
                     (0<=y) & (y<=1) &
@@ -23,7 +42,6 @@ intervaloDep = y < Fracción(1,8)
 valIndep = Fracción(3,4)
 prob = conjCont.ProbCondicional(f, intervaloDep, x, valIndep)
 escribir("c) P( Y < 1/8 | X = 3/4 ) =", prob)
-
 
 escribir("")
 escribir("3.43")
@@ -57,6 +75,26 @@ intervaloDep = (Fracción(1,4) < x) & (x < Fracción(1,2))
 valIndep = Fracción(3,4)
 prob = conjCont.ProbCondicional(f, intervaloDep, y, valIndep)
 escribir("b) P( 1/4 < X < 1/2 | Y = 3/4 ) =", prob)
+
+escribir("")
+escribir("3.49")
+distribución = {(1, 1): Decimal('0.05'), (2, 1): Decimal('0.05'), (3, 1): Decimal('0.10'), 
+                (1, 2): Decimal('0.05'), (2, 2): Decimal('0.10'), (3, 2): Decimal('0.35'), 
+                (1, 3): Decimal('0.00'), (2, 3): Decimal('0.20'), (3, 3): Decimal('0.10')}
+distMarginalX = conjDisc.ProbMarginal(distribución, x)
+escribir("a) g(x) =", distMarginalX)
+distMarginalY = conjDisc.ProbMarginal(distribución, y)
+escribir("b) h(y) =", distMarginalY)
+prob = redondear(conjDisc.ProbCondicional(distribución, x, 2, 3), 4)
+escribir("c) P(Y = 3 | X = 2) =", prob)
+
+escribir("")
+escribir("3.53")
+f = (C(4,x)*C(4,y)*C(4,3-x-y))/C(12,3)
+distribución = conjDisc.Func2Dist(f, [0,1,2,3], [0,1,2,3])
+escribir("a)", distribución)
+prob = conjDisc.Prob(distribución, x + y >=2)
+escribir("b) P(X + Y <= 2) =", prob)
 
 escribir("")
 escribir("3.55")

@@ -38,7 +38,7 @@ escribir("b) P(1/4 < X < 1/2) =", cont.Prob(f,x,a,b))
 escribir("")
 escribir("3.11")
 f = (C(2,x)*C(5,3-x))/C(7,3)
-print("Distribución:", disc.Func2Dist(f, x, [0,1,2]))
+escribir("Distribución:", disc.Func2Dist(f, x, [0,1,2]))
 
 escribir("")
 escribir("3.13")
