@@ -1,6 +1,7 @@
 desde sympy importar binomial como C
 desde sympy importar Piecewise como Trozos
 desde sympy importar Symbol como Simbolo
+desde sympy importar Eq
 desde fractions importar Fraction como Fracción
 desde decimal importar Decimal
 desde redondeo importar redondear
@@ -39,8 +40,8 @@ prob = conjCont.Prob(intervalo)
 escribir("a) P(X + Y < 1/2) =", prob)
 escribir("b) g(x) =", conjCont.ProbMarginal(x))
 intervaloDep = y < Fracción(1,8)
-valIndep = Fracción(3,4)
-prob = conjCont.ProbCondicional(intervaloDep, x, valIndep)
+eqDep = Eq(x, Fracción(3,4))
+prob = conjCont.ProbCondicional(intervaloDep, eqDep)
 escribir("c) P( Y < 1/8 | X = 3/4 ) =", prob)
 
 escribir("")
@@ -75,8 +76,8 @@ escribir("g(x) =", conjCont.ProbMarginal(x))
 escribir("h(y) =", conjCont.ProbMarginal(y))
 escribir("g(x)h(y) != f(x,y), Dependientes")
 intervaloDep = (Fracción(1,4) < x) & (x < Fracción(1,2))
-valIndep = Fracción(3,4)
-prob = conjCont.ProbCondicional(intervaloDep, y, valIndep)
+eqDep = Eq(y, Fracción(3,4))
+prob = conjCont.ProbCondicional(intervaloDep, eqDep)
 escribir("b) P( 1/4 < X < 1/2 | Y = 3/4 ) =", prob)
 
 escribir("")
@@ -106,8 +107,8 @@ f = Trozos(((6-x-y)/8, (0<x) & (x<2) &
            (0, otroCaso))
 conjCont.establecerFdp(f)
 intervaloDep = (1 < y) & (y < 3)
-valIndep = 1
-prob = conjCont.ProbCondicional(intervaloDep, x, valIndep)
+eqDep = Eq(x,1)
+prob = conjCont.ProbCondicional(intervaloDep, eqDep)
 escribir("P( 1 < Y < 3 | X = 1 ) =", prob)
 
 escribir("")
