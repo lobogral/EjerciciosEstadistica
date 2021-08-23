@@ -91,7 +91,7 @@ distMarginalX = conjDisc.ProbMarginal(x)
 escribir("a) g(x) =", distMarginalX)
 distMarginalY = conjDisc.ProbMarginal(y)
 escribir("b) h(y) =", distMarginalY)
-prob = redondear(conjDisc.ProbCondicional(Eq(y, 3), Eq(x, 2)), 4)
+prob = redondear(conjDisc.ProbCondicional([Eq(y, 3)], [Eq(x, 2)]), 4)
 escribir("c) P(Y = 3 | X = 2) =", prob)
 
 escribir("")
