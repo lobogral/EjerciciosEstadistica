@@ -1,5 +1,6 @@
 desde sympy importar Piecewise como Trozos
 desde sympy importar binomial como C
+desde sympy importar Eq
 desde sympy.abc importar x, y
 desde sympy.functions importar exp
 desde sympy.stats importar ContinuousRV
@@ -10,11 +11,11 @@ desde distribuciones importar discreta como disc
 
 escribir("3.5")
 f = x**2 + 4
-distribución = disc.Func2Dist(f, x, [0,1,2,3])
-escribir("a) c =", 1/disc.ProbTotal(distribución))
+c = 1/disc.ProbTotal(f, {x: (0,3)})
+escribir("a) c =", c)
 f = C(2,x)*C(3,3-x)
-distribución = disc.Func2Dist(f, x, [0,1,2])
-escribir("b) c =", 1/disc.ProbTotal(distribución))
+c = 1/disc.ProbTotal(f, {x: [0,1,2]})
+escribir("b) c =", c)
 
 escribir("")
 escribir("3.7")
@@ -42,18 +43,23 @@ escribir("b) P(1/4 < X < 1/2) =", prob)
 escribir("")
 escribir("3.11")
 f = (C(2,x)*C(5,3-x))/C(7,3)
-escribir("Distribución:", disc.Func2Dist(f, x, [0,1,2]))
+escribir("f(x) =", disc.Func2Troz(f, {x: [0,1,2]}))
 
 escribir("")
 escribir("3.13")
-distribución = {0:0.41, 1:0.37, 2:0.16, 3:0.05, 4:0.01}
-escribir("F(x)=", disc.ProbAcum(distribución))
+f = Trozos((0.41, Eq(x, 0)), 
+           (0.37, Eq(x, 1)), 
+           (0.16, Eq(x, 2)), 
+           (0.05, Eq(x, 3)), 
+           (0.01, Eq(x, 4)))
+dom = {x: (0,4)}
+escribir("F(x)=", disc.ProbAcum(f, dom))
 
 escribir("")
 escribir("3.15")
 f = (C(2,x)*C(5,3-x))/C(7,3)
-distribución = disc.Func2Dist(f, x, [0,1,2])
-F = disc.ProbAcum(distribución)
+dom = {x: [0,1,2]}
+F = disc.ProbAcum(f, dom)
 escribir("F(x)=", F)
 Fb = F.subs(x,1.9)
 Fa = F.subs(x,0.9)
@@ -61,7 +67,6 @@ escribir("a) P(X = 1) =", Fb-Fa)
 Fb = F.subs(x,2)
 Fa = F.subs(x,0.1)
 escribir("b) P(0 < X <= 2) =", Fb-Fa)
-
 
 escribir("")
 escribir("3.17")
@@ -104,15 +109,16 @@ escribir("P(0.3 < X < 0.6) =", redondear(Fb-Fa, 4))
 
 escribir("")
 escribir("3.23")
-distribución = {-3:Fracción(1,27), 
-                -1:Fracción(6,27), 
-                 1:Fracción(12,27), 
-                 3:Fracción(8,27)}
-F = disc.ProbAcum(distribución)
+f = Trozos((Fracción(1,27), Eq(x,-3)),
+           (Fracción(6,27), Eq(x,-1)),
+           (Fracción(12,27), Eq(x,1)),
+           (Fracción(8,27), Eq(x,3)))
+dom = {x: [-3,-1,1,3]}
+F = disc.ProbAcum(f, dom)
 escribir("F(x)=", F)
 escribir("a) P(X > 0) =", 1-F.subs(x,0))
 Fb = F.subs(x,2.9)
-Fa = F.subs(x,-1)
+Fa = F.subs(x,-1.1)
 escribir("b) P(-1 <= X < 3) =", Fb-Fa)
 
 escribir("")
