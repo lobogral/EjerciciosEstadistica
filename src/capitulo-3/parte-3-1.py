@@ -1,7 +1,7 @@
 desde sympy importar Piecewise como Trozos
 desde sympy importar binomial como C
 desde sympy importar Eq
-desde sympy.abc importar x, y
+desde sympy.abc importar x, y, w
 desde sympy.functions importar exp
 desde sympy.stats importar ContinuousRV
 desde fractions importar Fraction como Fracción
@@ -61,11 +61,17 @@ f = (C(2,x)*C(5,3-x))/C(7,3)
 dom = {x: [0,1,2]}
 F = disc.ProbAcum(f, dom)
 escribir("F(x)=", F)
-Fb = F.subs(x,1.9)
-Fa = F.subs(x,0.9)
+escribir("-- P(X = 1) = f(1)")
+escribir("-- F(1) = f(1) + f(0)")
+escribir("-- F(0) = f(0)")
+Fb = F.subs(x,1)
+Fa = F.subs(x,0)
 escribir("a) P(X = 1) =", Fb-Fa)
+escribir("-- P(0 < X <= 2) = f(2) + f(1)")
+escribir("-- F(2) = f(2) + f(1) + f(0)")
+escribir("-- F(0) = f(0)")
 Fb = F.subs(x,2)
-Fa = F.subs(x,0.1)
+Fa = F.subs(x,0)
 escribir("b) P(0 < X <= 2) =", Fb-Fa)
 
 escribir("")
@@ -109,17 +115,20 @@ escribir("P(0.3 < X < 0.6) =", redondear(Fb-Fa, 4))
 
 escribir("")
 escribir("3.23")
-f = Trozos((Fracción(1,27), Eq(x,-3)),
-           (Fracción(6,27), Eq(x,-1)),
-           (Fracción(12,27), Eq(x,1)),
-           (Fracción(8,27), Eq(x,3)))
-dom = {x: [-3,-1,1,3]}
+f = Trozos((Fracción(1,27), Eq(w,-3)),
+           (Fracción(6,27), Eq(w,-1)),
+           (Fracción(12,27), Eq(w,1)),
+           (Fracción(8,27), Eq(w,3)))
+dom = {w: [-3,-1,1,3]}
 F = disc.ProbAcum(f, dom)
-escribir("F(x)=", F)
-escribir("a) P(X > 0) =", 1-F.subs(x,0))
-Fb = F.subs(x,2.9)
-Fa = F.subs(x,-1.1)
-escribir("b) P(-1 <= X < 3) =", Fb-Fa)
+escribir("F(w)=", F)
+escribir("a) P(W > 0) =", 1-F.subs(w,0))
+escribir("-- P(-1 <= W < 3) = f(-1) + f(1)")
+escribir("-- F(1) = f(1) + f(-1) + f(-3)")
+escribir("-- F(-3) = f(-3)")
+Fb = F.subs(w,1)
+Fa = F.subs(w,-3)
+escribir("b) P(-1 <= W < 3) =", Fb-Fa)
 
 escribir("")
 escribir("3.27")
