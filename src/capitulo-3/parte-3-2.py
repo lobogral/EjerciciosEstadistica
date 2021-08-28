@@ -14,18 +14,18 @@ z = Simbolo("z", real=Verdadero)
 
 escribir("3.37")
 f = x*y
-distribución = conjDisc.Func2Dist(f, [x,y], [1,2,3], [1,2,3])
-escribir("a) c =", 1/conjDisc.ProbTotal(distribución))
+c = conjDisc.ProbTotal(f, {x: (1,3), y: (1,3)})
+escribir("a) c =", 1/c)
 f = abs(x - y)
-distribución = conjDisc.Func2Dist(f, [x,y], [-2,0,2], [-2,3])
-escribir("b) c =", 1/conjDisc.ProbTotal(distribución))
+c = conjDisc.ProbTotal(f, {x: [-2,0,2], y: [-2,3]})
+escribir("b) c =", 1/c)
 
 escribir("")
 escribir("3.39")
 f = (C(3,x)*C(2,y)*C(3,4-x-y))/C(8,4)
-distribución = conjDisc.Func2Dist(f, [x,y], [0,1,2,3], [0,1,2])
-conjDisc.establecerDist(distribución, [x,y])
-escribir("a) ", distribución)
+dom = {x: [0,1,2,3], y: [0,1,2]}
+conjDisc.establecerDpDom(f, dom)
+escribir("a) ", conjDisc.Func2Troz())
 prob = conjDisc.Prob(x + y <= 2)
 escribir("b) P(X + Y <= 2) =", prob)
 
@@ -83,10 +83,11 @@ escribir("b) P( 1/4 < X < 1/2 | Y = 3/4 ) =", prob)
 
 escribir("")
 escribir("3.49")
-distribución = {(1, 1): Decimal('0.05'), (2, 1): Decimal('0.05'), (3, 1): Decimal('0.10'), 
-                (1, 2): Decimal('0.05'), (2, 2): Decimal('0.10'), (3, 2): Decimal('0.35'), 
-                (1, 3): Decimal('0.00'), (2, 3): Decimal('0.20'), (3, 3): Decimal('0.10')}
-conjDisc.establecerDist(distribución, [x,y])
+f = Trozos((0.05, Eq(x,1) & Eq(y,1)), (0.05, Eq(x,2) & Eq(y,1)), (0.10, Eq(x,3) & Eq(y,1)), 
+           (0.05, Eq(x,1) & Eq(y,2)), (0.10, Eq(x,2) & Eq(y,2)), (0.35, Eq(x,3) & Eq(y,2)), 
+           (0.00, Eq(x,1) & Eq(y,3)), (0.20, Eq(x,2) & Eq(y,3)), (0.10, Eq(x,3) & Eq(y,3)))
+dom = {x: [1,2,3], y: [1,2,3]}
+conjDisc.establecerDpDom(f, dom)
 distMarginalX = conjDisc.ProbMarginal(x)
 escribir("a) g(x) =", distMarginalX)
 distMarginalY = conjDisc.ProbMarginal(y)
@@ -97,9 +98,9 @@ escribir("c) P(Y = 3 | X = 2) =", prob)
 escribir("")
 escribir("3.53")
 f = (C(4,x)*C(4,y)*C(4,3-x-y))/C(12,3)
-distribución = conjDisc.Func2Dist(f, [x,y], [0,1,2,3], [0,1,2,3])
-conjDisc.establecerDist(distribución, [x,y])
-escribir("a)", distribución)
+dom = {x: [0,1,2,3], y: [0,1,2,3]}
+conjDisc.establecerDpDom(f, dom)
+escribir("a)", conjDisc.Func2Troz())
 prob = conjDisc.Prob(x + y >=2)
 escribir("b) P(X + Y <= 2) =", prob)
 
