@@ -11,7 +11,7 @@ desde distribuciones importar conjuntaDiscreta como conjDisc
 x = Simbolo("x", real=Verdadero)
 y = Simbolo("y", real=Verdadero)
 z = Simbolo("z", real=Verdadero)
-"""
+
 escribir("3.37")
 f = x*y
 c = conjDisc.ProbTotal(f, {x: (1,3), y: (1,3)})
@@ -80,7 +80,7 @@ intervaloDep = (Fracción(1,4) < x) & (x < Fracción(1,2))
 eqDep = Eq(y, Fracción(3,4))
 prob = conjCont.ProbCondicional(intervaloDep, eqDep)
 escribir("b) P( 1/4 < X < 1/2 | Y = 3/4 ) =", prob)
-"""
+
 escribir("")
 escribir("3.49")
 dist = {(1, 1): 0.05, (2, 1): 0.05, (3, 1): 0.10, 
@@ -94,7 +94,7 @@ distMarginalY = conjDisc.ProbMarginal(y)
 escribir("b) h(y) =", distMarginalY)
 prob = redondear(conjDisc.ProbCondicional(Eq(y, 3), Eq(x, 2)), 4)
 escribir("c) P(Y = 3 | X = 2) =", prob)
-"""
+
 escribir("")
 escribir("3.53")
 f = (C(4,x)*C(4,y)*C(4,3-x-y))/C(12,3)
@@ -127,4 +127,3 @@ conjCont.establecerFdp(k*f)
 intervalo = (x<Fracción(1,4)) & (y > Fracción(1,2)) & (1<z) & (z<2)
 prob = conjCont.Prob(intervalo)
 escribir("b) P(X < 1/4, Y > 1/2, 1 < Z < 2) =", prob)
-"""
