@@ -11,7 +11,7 @@ desde distribuciones importar conjuntaDiscreta como conjDisc
 x = Simbolo("x", real=Verdadero)
 y = Simbolo("y", real=Verdadero)
 z = Simbolo("z", real=Verdadero)
-
+"""
 escribir("3.37")
 f = x*y
 c = conjDisc.ProbTotal(f, {x: (1,3), y: (1,3)})
@@ -25,7 +25,7 @@ escribir("3.39")
 f = (C(3,x)*C(2,y)*C(3,4-x-y))/C(8,4)
 dom = {x: [0,1,2,3], y: [0,1,2]}
 conjDisc.establecerDpDom(f, dom)
-escribir("a) ", conjDisc.Func2Troz())
+escribir("a) ", conjDisc.dp2Dist())
 prob = conjDisc.Prob(x + y <= 2)
 escribir("b) P(X + Y <= 2) =", prob)
 
@@ -80,27 +80,27 @@ intervaloDep = (Fracción(1,4) < x) & (x < Fracción(1,2))
 eqDep = Eq(y, Fracción(3,4))
 prob = conjCont.ProbCondicional(intervaloDep, eqDep)
 escribir("b) P( 1/4 < X < 1/2 | Y = 3/4 ) =", prob)
-
+"""
 escribir("")
 escribir("3.49")
-f = Trozos((0.05, Eq(x,1) & Eq(y,1)), (0.05, Eq(x,2) & Eq(y,1)), (0.10, Eq(x,3) & Eq(y,1)), 
-           (0.05, Eq(x,1) & Eq(y,2)), (0.10, Eq(x,2) & Eq(y,2)), (0.35, Eq(x,3) & Eq(y,2)), 
-           (0.00, Eq(x,1) & Eq(y,3)), (0.20, Eq(x,2) & Eq(y,3)), (0.10, Eq(x,3) & Eq(y,3)))
-dom = {x: [1,2,3], y: [1,2,3]}
+dist = {(1, 1): 0.05, (2, 1): 0.05, (3, 1): 0.10, 
+        (1, 2): 0.05, (2, 2): 0.10, (3, 2): 0.35, 
+        (1, 3): 0.00, (2, 3): 0.20, (3, 3): 0.10}
+f, dom = conjDisc.dist2Dp(dist, [x, y])
 conjDisc.establecerDpDom(f, dom)
 distMarginalX = conjDisc.ProbMarginal(x)
 escribir("a) g(x) =", distMarginalX)
 distMarginalY = conjDisc.ProbMarginal(y)
 escribir("b) h(y) =", distMarginalY)
-prob = redondear(conjDisc.ProbCondicional([Eq(y, 3)], [Eq(x, 2)]), 4)
+prob = redondear(conjDisc.ProbCondicional(Eq(y, 3), Eq(x, 2)), 4)
 escribir("c) P(Y = 3 | X = 2) =", prob)
-
+"""
 escribir("")
 escribir("3.53")
 f = (C(4,x)*C(4,y)*C(4,3-x-y))/C(12,3)
 dom = {x: [0,1,2,3], y: [0,1,2,3]}
 conjDisc.establecerDpDom(f, dom)
-escribir("a)", conjDisc.Func2Troz())
+escribir("a)", conjDisc.dp2Dist())
 prob = conjDisc.Prob(x + y >=2)
 escribir("b) P(X + Y <= 2) =", prob)
 
@@ -127,3 +127,4 @@ conjCont.establecerFdp(k*f)
 intervalo = (x<Fracción(1,4)) & (y > Fracción(1,2)) & (1<z) & (z<2)
 prob = conjCont.Prob(intervalo)
 escribir("b) P(X < 1/4, Y > 1/2, 1 < Z < 2) =", prob)
+"""
