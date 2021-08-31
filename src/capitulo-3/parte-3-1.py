@@ -1,6 +1,7 @@
 desde sympy importar Piecewise como Trozos
 desde sympy importar binomial como C
-desde sympy importar Eq
+desde sympy importar Eq como Ec
+desde sympy importar Contains como Pert
 desde sympy.abc importar x, y, w
 desde sympy.functions importar exp, factorial
 desde sympy.stats importar ContinuousRV
@@ -10,11 +11,11 @@ desde distribuciones importar continua como cont
 desde distribuciones importar discreta como disc
 
 escribir("3.5")
-f = x**2 + 4
-c = 1/disc.ProbTotal(f, {x: (0,3)})
+f = Trozos((x**2 + 4, x<=3))
+c = 1/disc.ProbTotal(f)
 escribir("a) c =", c)
-f = C(2,x)*C(3,3-x)
-c = 1/disc.ProbTotal(f, {x: [0,1,2]})
+f = Trozos((C(2,x)*C(3,3-x), Pert(x,{0,1,2})))
+c = 1/disc.ProbTotal(f)
 escribir("b) c =", c)
 
 escribir("")
@@ -42,27 +43,21 @@ escribir("b) P(1/4 < X < 1/2) =", prob)
 
 escribir("")
 escribir("3.11")
-f = (C(2,x)*C(5,3-x))/C(7,3)
-dom = {x: [0,1,2]}
-disc.establecerDpDom(f, dom)
-escribir("f(x) =", disc.Func2Troz())
+f = Trozos(((C(2,x)*C(5,3-x))/C(7,3), x<=2))
+disc.establecerDp(f)
+escribir("Distribucion:", disc.dp2Dist())
 
 escribir("")
 escribir("3.13")
-f = Trozos((0.41, Eq(x, 0)), 
-           (0.37, Eq(x, 1)), 
-           (0.16, Eq(x, 2)), 
-           (0.05, Eq(x, 3)), 
-           (0.01, Eq(x, 4)))
-dom = {x: (0,4)}
-disc.establecerDpDom(f, dom)
+dist = {0:0.41, 1:0.37, 2:0.16, 3:0.05, 4:0.01}
+f = disc.dist2Dp(dist, x)
+disc.establecerDp(f)
 escribir("F(x)=", disc.ProbAcum())
 
 escribir("")
 escribir("3.15")
-f = (C(2,x)*C(5,3-x))/C(7,3)
-dom = {x: [0,1,2]}
-disc.establecerDpDom(f, dom)
+f = Trozos(((C(2,x)*C(5,3-x))/C(7,3), x<=2))
+disc.establecerDp(f)
 F = disc.ProbAcum()
 escribir("F(x)=", F)
 escribir("-- P(X = 1) = f(1)")
@@ -118,13 +113,13 @@ Fa = F.subs(x, 0.3)
 escribir("P(0.3 < X < 0.6) =", redondear(Fb-Fa, 4))
 
 escribir("")
-escribir("3.23")
-f = Trozos((Fracción(1,27), Eq(w,-3)),
-           (Fracción(6,27), Eq(w,-1)),
-           (Fracción(12,27), Eq(w,1)),
-           (Fracción(8,27), Eq(w,3)))
-dom = {w: [-3,-1,1,3]}
-disc.establecerDpDom(f, dom)
+escribir("3.23") 
+dist = {-3:Fracción(1,27),
+        -1:Fracción(6,27),
+         1:Fracción(12,27),
+         3:Fracción(8,27)}
+f = disc.dist2Dp(dist, w)
+disc.establecerDp(f)
 F = disc.ProbAcum()
 escribir("F(w)=", F)
 escribir("a) P(W > 0) =", 1-F.subs(w,0))
@@ -184,10 +179,8 @@ escribir("c) P(0.8 < Y < 1) =", prob)
 escribir("")
 escribir("3.35")
 f = exp(-6)*(6**x)/factorial(x)
-disc.establecerDpDom(f)
-subDom = {x: (0,8)}
-prob = redondear(1 - disc.Prob(subDom).evalf(), 4)
+disc.establecerDp(f)
+prob = redondear(1 - disc.Prob(x<=8).evalf(), 4)
 escribir("a) P(X > 8) =", prob)
-subDom = {x: [2]}
-prob = redondear(disc.Prob(subDom).evalf(), 4)
+prob = redondear(disc.Prob(Ec(x,2)).evalf(), 4)
 escribir("b) P(X = 2) =", prob)
