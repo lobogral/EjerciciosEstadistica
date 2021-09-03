@@ -26,4 +26,5 @@ Verdadero = True
 texto = "".join(texto)
 texto = re.sub('desde (.+) importar (.+) como (.+)', 'from \g<1> import \g<2> as \g<3>', texto)
 texto = re.sub('desde (.+) importar (.+)', 'from \g<1> import \g<2>', texto)
+texto = re.sub('\.pert\(', '.as_relational(', texto)
 exec(texto)

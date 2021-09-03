@@ -2,7 +2,7 @@ desde sympy importar binomial como C
 desde sympy importar Piecewise como Trozos
 desde sympy importar Symbol como Simbolo
 desde sympy importar Eq como Ec
-desde sympy importar Contains como Pert
+desde sympy importar FiniteSet como Con
 desde fractions importar Fraction como Fracción
 desde decimal importar Decimal
 desde redondeo importar redondear
@@ -14,19 +14,19 @@ y = Simbolo("y", real=Verdadero)
 z = Simbolo("z", real=Verdadero)
 
 escribir("3.37")
-f = Trozos((x*y, Pert(x,{1,2,3}) & 
-                 Pert(y,{1,2,3})))
+f = Trozos((x*y, Con(1,2,3).pert(x) & 
+                 Con(1,2,3).pert(y)))
 c = conjDisc.ProbTotal(f)
 escribir("a) c =", 1/c)
-f = Trozos((abs(x - y), Pert(x,{-2,0,2}) & 
-                        Pert(y,{-2,3})))
+f = Trozos((abs(x - y), Con(-2,0,2).pert(x) & 
+                        Con(-2,3).pert(y)))
 c = conjDisc.ProbTotal(f)
 escribir("b) c =", 1/c)
 
 escribir("")
 escribir("3.39")
-f = Trozos(((C(3,x)*C(2,y)*C(3,4-x-y))/C(8,4), Pert(x,{0,1,2,3}) & 
-                                               Pert(y,{0,1,2})))
+f = Trozos(((C(3,x)*C(2,y)*C(3,4-x-y))/C(8,4), Con(0,1,2,3).pert(x) & 
+                                               Con(0,1,2).pert(y)))
 conjDisc.establecerDp(f)
 escribir("a) ", conjDisc.dp2Dist(x,y))
 prob = conjDisc.Prob(x + y <= 2)
@@ -100,8 +100,8 @@ escribir("c) P(Y = 3 | X = 2) =", prob)
 
 escribir("")
 escribir("3.53")
-f = Trozos(( (C(4,x)*C(4,y)*C(4,3-x-y))/C(12,3), Pert(x, {0,1,2,3}) &
-                                                 Pert(y, {0,1,2,3})))
+f = Trozos(( (C(4,x)*C(4,y)*C(4,3-x-y))/C(12,3), Con(0,1,2,3).pert(x) &
+                                                 Con(0,1,2,3).pert(y)))
 conjDisc.establecerDp(f)
 escribir("a)", conjDisc.dp2Dist(x,y))
 prob = conjDisc.Prob(x + y >=2)
