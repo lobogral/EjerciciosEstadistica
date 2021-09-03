@@ -10,7 +10,7 @@ desde distribuciones importar continua como cont
 desde distribuciones importar discreta como disc
 
 escribir("3.5")
-f = Trozos((x**2 + 4, x<=3))
+f = Trozos((x**2 + 4, (x>=0) & (x<=3)))
 c = 1/disc.ProbTotal(f)
 escribir("a) c =", c)
 f = Trozos((C(2,x)*C(3,3-x), Con(0,1,2).pert(x)))
@@ -42,7 +42,7 @@ escribir("b) P(1/4 < X < 1/2) =", prob)
 
 escribir("")
 escribir("3.11")
-f = Trozos(((C(2,x)*C(5,3-x))/C(7,3), x<=2))
+f = Trozos(((C(2,x)*C(5,3-x))/C(7,3), (x>=0) & (x<=2)))
 disc.establecerDp(f)
 escribir("Distribucion:", disc.dp2Dist())
 
@@ -55,7 +55,7 @@ escribir("F(x)=", disc.ProbAcum())
 
 escribir("")
 escribir("3.15")
-f = Trozos(((C(2,x)*C(5,3-x))/C(7,3), x<=2))
+f = Trozos(((C(2,x)*C(5,3-x))/C(7,3), (x>=0) & (x<=2)))
 disc.establecerDp(f)
 F = disc.ProbAcum()
 escribir("F(x)=", F)
@@ -177,7 +177,7 @@ escribir("c) P(0.8 < Y < 1) =", prob)
 
 escribir("")
 escribir("3.35")
-f = exp(-6)*(6**x)/factorial(x)
+f = Trozos((exp(-6)*(6**x)/factorial(x), x>=0))
 disc.establecerDp(f)
 prob = redondear(1 - disc.Prob(x<=8).evalf(), 4)
 escribir("a) P(X > 8) =", prob)

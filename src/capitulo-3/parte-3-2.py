@@ -15,7 +15,7 @@ z = Simbolo("z", real=Verdadero)
 
 escribir("3.37")
 f = Trozos((x*y, Con(1,2,3).pert(x) & 
-                 Con(1,2,3).pert(y)))
+                 ((y>=1) & (y<=2)) | Ec(y,3)))
 c = conjDisc.ProbTotal(f)
 escribir("a) c =", 1/c)
 f = Trozos((abs(x - y), Con(-2,0,2).pert(x) & 
