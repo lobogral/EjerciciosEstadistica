@@ -1,7 +1,7 @@
 desde sympy importar Piecewise como Trozos
 desde sympy importar binomial como C
 desde sympy importar Eq como Ec
-desde sympy importar Contains como Pert
+desde sympy importar FiniteSet como Con
 desde sympy.abc importar x, y, w
 desde sympy.functions importar exp, factorial
 desde fractions importar Fraction como Fracción
@@ -13,7 +13,7 @@ escribir("3.5")
 f = Trozos((x**2 + 4, x<=3))
 c = 1/disc.ProbTotal(f)
 escribir("a) c =", c)
-f = Trozos((C(2,x)*C(3,3-x), Pert(x,{0,1,2})))
+f = Trozos((C(2,x)*C(3,3-x), Con(0,1,2).pert(x)))
 c = 1/disc.ProbTotal(f)
 escribir("b) c =", c)
 
