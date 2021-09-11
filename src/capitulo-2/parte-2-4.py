@@ -1,7 +1,7 @@
 desde fractions importar Fraction como Fracción
 desde decimal importar Decimal
 desde redondeo importar redondear
-desde conteoPM importar C
+desde conteoPM importar nC
 
 escribir("2.79")
 escribir("H -> Hombre")
@@ -69,7 +69,7 @@ escribir("2.91")
 escribir("C -> Casa abierta")
 escribir("L -> Llaves abran casa")
 prob = Fracción(4,10)
-prob += Fracción(6,10)*Fracción(C(1,1)*C(7,2),C(8,3))
+prob += Fracción(6,10)*Fracción(nC(1,1)*nC(7,2),nC(8,3))
 escribir("P(C ∪ (C' ∩ A)) = P(C) + P(C')P(A | C') =", prob)
 
 escribir("")
@@ -102,7 +102,7 @@ prob *= Fracción(14,19)
 prob *= Fracción(13,18)
 prob *= Fracción(12,17)
 escribir("a) Forma 1, P =", prob)
-prob = Fracción(C(15,4),C(20,4))
+prob = Fracción(nC(15,4),nC(20,4))
 escribir("b) Forma 2, P =", prob)
 
 escribir("")

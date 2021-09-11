@@ -22,19 +22,19 @@ escribir("c) Listada despues de la g:", prob)
 
 escribir("")
 escribir("2.59")
-prob = Fracción(5*P(25,2)*(9**3)*4, P(26,3)*(9**4))
+prob = Fracción(5*nP(25,2)*(9**3)*4, nP(26,3)*(9**4))
 escribir("Seleccionar artículo:", prob)
 
 escribir("")
 escribir("2.61")
-prob = Fracción(C(20,2),C(52,2))
+prob = Fracción(nC(20,2),nC(52,2))
 escribir("Escoger cartas correctas:", prob)
 
 escribir("")
 escribir("2.63")
-prob = Fracción(C(4,3)*C(48,2),C(52,5))
+prob = Fracción(nC(4,3)*nC(48,2),nC(52,5))
 escribir("a) Tener 3 ases:", prob)
-prob = Fracción(C(13,4)*C(13,1),C(52,5))
+prob = Fracción(nC(13,4)*nC(13,1),nC(52,5))
 escribir("b) Tener 4 corazones y 1 tréboles:", prob)
 
 escribir("")

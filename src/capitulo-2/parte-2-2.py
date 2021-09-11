@@ -26,11 +26,11 @@ escribir("b) Formas de elegir incorrectas todas las preguntas:", 3**5)
 
 escribir("")
 escribir("2.33")
-escribir("Máximo de matrículas a verificar:", P(9,2))
+escribir("Máximo de matrículas a verificar:", nP(9,2))
 
 escribir("")
 escribir("2.35")
-escribir("Formas de colocar casas:", P(9,3)*P(6,6))
+escribir("Formas de colocar casas:", nP(9,3)*nP(6,6))
 
 escribir("")
 escribir("2.37")
@@ -40,11 +40,11 @@ escribir("")
 escribir("2.39")
 escribir("Número de ordenamientos")
 escribir("a) 8 finalistas:", factorial(8))
-escribir("b) primeras 3 posiciones:", P(8,3))
+escribir("b) primeras 3 posiciones:", nP(8,3))
 
 escribir("")
 escribir("2.41")
-escribir("Manera de asignar cursos:", P(6,4))
+escribir("Manera de asignar cursos:", nP(6,4))
 
 escribir("")
 escribir("2.43")
@@ -52,12 +52,12 @@ escribir("Formas de plantar 5 árboles diferentes en círculo:", factorial(5-1))
 
 escribir("")
 escribir("2.45")
-escribir("Permutaciones con las letras de infinito:", PClase(8, 3, 2))
+escribir("Permutaciones con las letras de infinito:", nT(8, [3, 2]))
 
 escribir("")
 escribir("2.47")
-escribir("Formas de terminar la temporada:", PClase(12, 7, 3, 2))
+escribir("Formas de terminar la temporada:", nT(12, [7, 3, 2]))
 
 escribir("")
 escribir("2.49")
-escribir("Formas de seleccionar candidatos:", C(8,3))
+escribir("Formas de seleccionar candidatos:", nC(8,3))
