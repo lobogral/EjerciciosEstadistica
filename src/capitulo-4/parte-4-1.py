@@ -1,6 +1,6 @@
 desde sympy importar Piecewise como Trozos
 desde sympy importar Symbol como Simbolo
-desde sympy importar binomial como C
+desde sympy importar binomial como nC
 desde sympy importar pi
 desde sympy importar FiniteSet como Con
 desde sympy.functions importar exp
@@ -121,8 +121,8 @@ escribir("c) E(Y) =", E)
 
 escribir("")
 escribir("4.25")
-f = Trozos(( (C(4,x)*C(4,y)*C(4,3-x-y))/C(12,3), Con(0,1,2,3).pert(x) &
-                                                 Con(0,1,2,3).pert(y)))
+f = Trozos(( (nC(4,x)*nC(4,y)*nC(4,3-x-y))/nC(12,3), Con(0,1,2,3).pert(x) &
+                                                     Con(0,1,2,3).pert(y)))
 distE.establecerDp(f)
 E = distE.E(x+y)
 escribir("g(X,Y) = X+Y, E(g(X,Y)) =", E, "para jacks y reyes")

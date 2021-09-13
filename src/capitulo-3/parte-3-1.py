@@ -1,5 +1,5 @@
 desde sympy importar Piecewise como Trozos
-desde sympy importar binomial como C
+desde sympy importar binomial como nC
 desde sympy importar Eq como Ec
 desde sympy importar FiniteSet como Con
 desde sympy.abc importar x, y, w
@@ -13,7 +13,7 @@ escribir("3.5")
 f = Trozos((x**2 + 4, (x>=0) & (x<=3)))
 c = 1/disc.ProbTotal(f)
 escribir("a) c =", c)
-f = Trozos((C(2,x)*C(3,3-x), Con(0,1,2).pert(x)))
+f = Trozos((nC(2,x)*nC(3,3-x), Con(0,1,2).pert(x)))
 c = 1/disc.ProbTotal(f)
 escribir("b) c =", c)
 
@@ -42,7 +42,7 @@ escribir("b) P(1/4 < X < 1/2) =", prob)
 
 escribir("")
 escribir("3.11")
-f = Trozos(((C(2,x)*C(5,3-x))/C(7,3), (x>=0) & (x<=2)))
+f = Trozos(((nC(2,x)*nC(5,3-x))/nC(7,3), (x>=0) & (x<=2)))
 disc.establecerDp(f)
 escribir("Distribucion:", disc.dp2Dist())
 
@@ -55,7 +55,7 @@ escribir("F(x)=", disc.ProbAcum())
 
 escribir("")
 escribir("3.15")
-f = Trozos(((C(2,x)*C(5,3-x))/C(7,3), (x>=0) & (x<=2)))
+f = Trozos(((nC(2,x)*nC(5,3-x))/nC(7,3), (x>=0) & (x<=2)))
 disc.establecerDp(f)
 F = disc.ProbAcum()
 escribir("F(x)=", F)
