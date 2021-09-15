@@ -1,5 +1,5 @@
 desde decimal importar Decimal
-desde fractions importar Fraction como Fracción
+desde fractions importar Fraction como Frac
 desde conteoPM importar *
 desde redondeo importar *
 
@@ -13,39 +13,39 @@ escribir("b) P(S' ∩ B') =", prob)
 
 escribir("")
 escribir("2.57")
-prob = Fracción(5, 26)
+prob = Frac(5, 26)
 escribir("a) Vocal excepto y:", prob)
-prob = Fracción(9, 26)
+prob = Frac(9, 26)
 escribir("b) Listada antes de la j:", prob)
-prob = Fracción(19, 26)
+prob = Frac(19, 26)
 escribir("c) Listada despues de la g:", prob)
 
 escribir("")
 escribir("2.59")
-prob = Fracción(5*nP(25,2)*(9**3)*4, nP(26,3)*(9**4))
+prob = Frac(5*nP(25,2)*(9**3)*4, nP(26,3)*(9**4))
 escribir("Seleccionar artículo:", prob)
 
 escribir("")
 escribir("2.61")
-prob = Fracción(nC(20,2),nC(52,2))
+prob = Frac(nC(20,2),nC(52,2))
 escribir("Escoger cartas correctas:", prob)
 
 escribir("")
 escribir("2.63")
-prob = Fracción(nC(4,3)*nC(48,2),nC(52,5))
+prob = Frac(nC(4,3)*nC(48,2),nC(52,5))
 escribir("a) Tener 3 ases:", prob)
-prob = Fracción(nC(13,4)*nC(13,1),nC(52,5))
+prob = Frac(nC(13,4)*nC(13,1),nC(52,5))
 escribir("b) Tener 4 corazones y 1 tréboles:", prob)
 
 escribir("")
 escribir("2.65")
 escribir("M -> Estudio matemáticas")
 escribir("H -> Estudio historia")
-prob = Fracción(54+69-35,100)
+prob = Frac(54+69-35,100)
 escribir("a) P(M ∪ H) =", prob)
 prob = 1 - prob
 escribir("b) P(M' ∩ H') =", prob)
-prob = Fracción(69-35,100)
+prob = Frac(69-35,100)
 escribir("c) P(M ∩ H') = ", prob)
 
 escribir("")

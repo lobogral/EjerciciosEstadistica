@@ -1,7 +1,7 @@
 desde sympy importar Piecewise como Trozos
 desde sympy importar Symbol como Simbolo
 desde sympy.functions importar exp
-desde fractions importar Fraction como Fracción
+desde fractions importar Fraction como Frac
 desde esperanza importar distE, contE
 desde redondeo importar redondear
 
@@ -44,9 +44,9 @@ escribir("Var(X) = ", var, "* 100 horas")
 
 escribir("")
 escribir("4.41")
-dist = {-3:Fracción(1,6),
-         6:Fracción(1,2),
-         9:Fracción(1,3)}
+dist = {-3:Frac(1,6),
+         6:Frac(1,2),
+         9:Frac(1,3)}
 f = distE.dist2Dp(dist, x)
 distE.establecerDp(f)
 var = redondear(distE.desv((2*x+1)**2), 1)
@@ -54,7 +54,7 @@ escribir("g(X) = (2X+1)^2, desv(g(X)) = ", var)
 
 escribir("")
 escribir("4.43")
-f = Trozos((Fracción(1,4)*exp(-x/4), x>0),
+f = Trozos((Frac(1,4)*exp(-x/4), x>0),
            (0, otroCaso))
 contE.establecerFdp(f)
 E = contE.E(3*x-2)
@@ -75,8 +75,8 @@ escribir("Cov(X,Y) =", cov)
 
 escribir("")
 escribir("4.47")
-f = Trozos((Fracción(2,3)*(x+2*y), (0<=x) & (x<=1) &
-                                   (0<=y) & (y<=1)),
+f = Trozos((Frac(2,3)*(x+2*y), (0<=x) & (x<=1) &
+                               (0<=y) & (y<=1)),
            (0, otroCaso))
 contE.establecerFdp(f)
 cov = redondear(contE.Cov().evalf(), 4)

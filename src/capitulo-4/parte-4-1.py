@@ -4,7 +4,7 @@ desde sympy importar binomial como nC
 desde sympy importar pi
 desde sympy importar FiniteSet como Con
 desde sympy.functions importar exp
-desde fractions importar Fraction como Fracción
+desde fractions importar Fraction como Frac
 desde esperanza importar distE, contE
 desde distribuciones importar continua como cont
 desde redondeo importar redondear
@@ -15,9 +15,9 @@ x = Simbolo("x", real=Verdadero)
 y = Simbolo("y", real=Verdadero)
 
 escribir("4.3")
-dist = {20:Fracción(1,5),
-        25:Fracción(3,5),
-        30:Fracción(1,5)}
+dist = {20:Frac(1,5),
+        25:Frac(3,5),
+        30:Frac(1,5)}
 f = distE.dist2Dp(dist, t)
 distE.establecerDp(f)
 E = distE.E(t)
@@ -41,9 +41,9 @@ escribir("E(X) = $", E)
 
 escribir("")
 escribir("4.9")
-dist = {3:Fracción(8,52),
-        5:Fracción(8,52),
-        0:Fracción(36,52)}
+dist = {3:Frac(8,52),
+        5:Frac(8,52),
+        0:Frac(36,52)}
 f = distE.dist2Dp(dist, x)
 distE.establecerDp(f)
 E = redondear(distE.E(x).evalf(), 2)
@@ -78,9 +78,9 @@ escribir("E(X) =", E, "horas")
 
 escribir("")
 escribir("4.17")
-dist = {-3:Fracción(1,6),
-         6:Fracción(1,2),
-         9:Fracción(1,3)}
+dist = {-3:Frac(1,6),
+         6:Frac(1,2),
+         9:Frac(1,3)}
 f = distE.dist2Dp(dist, x)
 distE.establecerDp(f)
 E = redondear(distE.E((2*x+1)**2).evalf(), 0)
@@ -88,10 +88,10 @@ escribir("g(X) = (2X+1)^2, E(g(X)) =", E)
 
 escribir("")
 escribir("4.19")
-dist = {0:Fracción(1,10),
-        1:Fracción(3,10),
-        2:Fracción(2,5),
-        3:Fracción(1,5)}
+dist = {0:Frac(1,10),
+        1:Frac(3,10),
+        2:Frac(2,5),
+        3:Frac(1,5)}
 f = distE.dist2Dp(dist, x)
 distE.establecerDp(f)
 E = redondear(distE.E(1200*x-50*x**2).evalf(), 0)
@@ -129,7 +129,7 @@ escribir("g(X,Y) = X+Y, E(g(X,Y)) =", E, "para jacks y reyes")
 
 escribir("")
 escribir("4.27")
-f = Trozos((Fracción(1,2000)*exp(-x/2000), (x>=0)), 
+f = Trozos((Frac(1,2000)*exp(-x/2000), (x>=0)), 
            (0, otroCaso))
 contE.establecerFdp(f)
 E = contE.E(x)

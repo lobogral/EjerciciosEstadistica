@@ -4,7 +4,7 @@ desde sympy importar Eq como Ec
 desde sympy importar FiniteSet como Con
 desde sympy.abc importar x, y, w
 desde sympy.functions importar exp, factorial
-desde fractions importar Fraction como Fracción
+desde fractions importar Fraction como Frac
 desde redondeo importar redondear
 desde distribuciones importar continua como cont
 desde distribuciones importar discreta como disc
@@ -30,13 +30,13 @@ escribir("b) P(0.5 < X < 1) =", prob)
 
 escribir("")
 escribir("3.9")
-f = Trozos((Fracción(2,5)*(x+2), (0<x) & (x<1)), 
+f = Trozos((Frac(2,5)*(x+2), (0<x) & (x<1)), 
            (0, otroCaso))
 cont.establecerFdp(f)
 prob = cont.ProbTotal(f)
 escribir("a) Área bajo curva =", prob)
-a = Fracción(1,4)
-b = Fracción(1,2)
+a = Frac(1,4)
+b = Frac(1,2)
 prob = cont.Prob( (a < x) & (x < b) )
 escribir("b) P(1/4 < X < 1/2) =", prob)
 
@@ -74,13 +74,13 @@ escribir("b) P(0 < X <= 2) =", Fb-Fa)
 
 escribir("")
 escribir("3.17")
-f = Trozos((Fracción(1,2), (1<x) & (x<3)), 
+f = Trozos((Frac(1,2), (1<x) & (x<3)), 
            (0, otroCaso))
 cont.establecerFdp(f)
 prob = cont.ProbTotal(f)
 escribir("a) Área bajo curva =", prob)
 a = 2
-b = Fracción('2.5')
+b = Frac('2.5')
 prob = cont.Prob( (a < x) & (x < b) )
 escribir("b) P(2 < X < 2.5) =", prob)
 prob = redondear(cont.Prob(x <= 1.6), 1)
@@ -88,18 +88,18 @@ escribir("c) P(X <= 1.6) =", prob)
 
 escribir("")
 escribir("3.19")
-f = Trozos((Fracción(1,2), (1<x) & (x<3)), 
+f = Trozos((Frac(1,2), (1<x) & (x<3)), 
            (0, otroCaso))
 cont.establecerFdp(f)
 F = cont.ProbAcum()
 escribir("F(x) =", F)
-Fb = F.subs(x, Fracción('2.5'))
+Fb = F.subs(x, Frac('2.5'))
 Fa = F.subs(x, 2)
 escribir("P(2 < X < 2.5) =", Fb-Fa)
 
 escribir("")
 escribir("3.21")
-f = Trozos((x**Fracción(1,2), (0<x) & (x<1)), 
+f = Trozos((x**Frac(1,2), (0<x) & (x<1)), 
            (0, otroCaso))
 k = 1/cont.ProbTotal(f)
 escribir("a) k =", k)
@@ -113,10 +113,10 @@ escribir("P(0.3 < X < 0.6) =", redondear(Fb-Fa, 4))
 
 escribir("")
 escribir("3.23") 
-dist = {-3:Fracción(1,27),
-        -1:Fracción(6,27),
-         1:Fracción(12,27),
-         3:Fracción(8,27)}
+dist = {-3:Frac(1,27),
+        -1:Frac(6,27),
+         1:Frac(12,27),
+         3:Frac(8,27)}
 f = disc.dist2Dp(dist, w)
 disc.establecerDp(f)
 F = disc.ProbAcum()
@@ -131,7 +131,7 @@ escribir("b) P(-1 <= W < 3) =", Fb-Fa)
 
 escribir("")
 escribir("3.27")
-f = Trozos((Fracción(1,2000)*exp(-x/2000), (x>=0)), 
+f = Trozos((Frac(1,2000)*exp(-x/2000), (x>=0)), 
            (0, otroCaso))
 cont.establecerFdp(f)
 F = cont.ProbAcum()

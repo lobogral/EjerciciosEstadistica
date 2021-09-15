@@ -3,8 +3,7 @@ desde sympy importar Piecewise como Trozos
 desde sympy importar Symbol como Simbolo
 desde sympy importar Eq como Ec
 desde sympy importar FiniteSet como Con
-desde fractions importar Fraction como Fracción
-desde decimal importar Decimal
+desde fractions importar Fraction como Frac
 desde redondeo importar redondear
 desde distribuciones importar conjuntaContinua como conjCont
 desde distribuciones importar conjuntaDiscreta como conjDisc
@@ -39,12 +38,12 @@ f = Trozos((24*x*y, (0<=x) & (x<=1) &
                     (x + y <= 1)),             
             (0, otroCaso))
 conjCont.establecerFdp(f)
-intervalo = x + y < Fracción(1,2)
+intervalo = x + y < Frac(1,2)
 prob = conjCont.Prob(intervalo)
 escribir("a) P(X + Y < 1/2) =", prob)
 escribir("b) g(x) =", conjCont.ProbMarginal(x))
-intervaloDep = y < Fracción(1,8)
-eqDep = Ec(x, Fracción(3,4))
+intervaloDep = y < Frac(1,8)
+eqDep = Ec(x, Frac(3,4))
 prob = conjCont.ProbCondicional(intervaloDep, eqDep)
 escribir("c) P( Y < 1/8 | X = 3/4 ) =", prob)
 
@@ -53,8 +52,8 @@ escribir("3.43")
 f = Trozos((4*x*y, (0<x) & (x<1) & (0<y) & (y<1)),        
            (0, otroCaso))
 conjCont.establecerFdp(f)
-intervalo = (0<=x) & (x<=Fracción(1,2)) 
-intervalo = intervalo & (Fracción(1,4)<=y) & (y<=Fracción(1,2))
+intervalo = (0<=x) & (x<=Frac(1,2)) 
+intervalo = intervalo & (Frac(1,4)<=y) & (y<=Frac(1,2))
 prob = conjCont.Prob(intervalo)
 escribir("a) P(0 <= X <= 1/2, 1/4 < Y < 1/2) =", prob)
 intervalo = (x<y)
@@ -79,8 +78,8 @@ escribir("a)")
 escribir("g(x) =", conjCont.ProbMarginal(x))
 escribir("h(y) =", conjCont.ProbMarginal(y))
 escribir("g(x)h(y) != f(x,y), Dependientes")
-intervaloDep = (Fracción(1,4) < x) & (x < Fracción(1,2))
-eqDep = Ec(y, Fracción(3,4))
+intervaloDep = (Frac(1,4) < x) & (x < Frac(1,2))
+eqDep = Ec(y, Frac(3,4))
 prob = conjCont.ProbCondicional(intervaloDep, eqDep)
 escribir("b) P( 1/4 < X < 1/2 | Y = 3/4 ) =", prob)
 
@@ -127,6 +126,6 @@ f = Trozos((x*(y**2)*z, (0<x) & (x<1) &
 k = 1/conjCont.ProbTotal(f)
 escribir("a) k =", k)
 conjCont.establecerFdp(k*f)
-intervalo = (x<Fracción(1,4)) & (y > Fracción(1,2)) & (1<z) & (z<2)
+intervalo = (x<Frac(1,4)) & (y > Frac(1,2)) & (1<z) & (z<2)
 prob = conjCont.Prob(intervalo)
 escribir("b) P(X < 1/4, Y > 1/2, 1 < Z < 2) =", prob)
