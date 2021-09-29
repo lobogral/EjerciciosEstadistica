@@ -1,0 +1,3 @@
+https://github.com/lobogral/redondeo/releases/latest/download/redondeo.tar.gz
+https://github.com/lobogral/estadistica/releases/latest/download/estadistica.tar.gz
+sympy
