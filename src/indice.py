@@ -2,9 +2,10 @@
 # -*- coding: latin-1 -*-
 
 import re
+import sys
 
-cap = argv[1]
-parte = argv[2]
+cap = sys.argv[1]
+parte = sys.argv[2]
 ruta = 'capitulo-' + cap + '/parte-' + cap + '-' + parte + '.py'
 programa = open(ruta, 'r', encoding='utf8')
 texto = programa.readlines()

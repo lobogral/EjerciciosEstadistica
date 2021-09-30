@@ -1,6 +1,6 @@
-desde medidasPosición importar *
-desde gráficas importar puntos
-desde redondeo importar *
+desde estadistica.medidasPosición importar *
+#desde estadistica.gráficas importar puntos
+desde redondeo.redondeo importar *
 
 escribir("1.1")
 escribir("Mediciones tiempo de secado en pintura (horas)")
