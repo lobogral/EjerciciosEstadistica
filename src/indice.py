@@ -6,7 +6,7 @@ import sys
 
 cap = sys.argv[1]
 parte = sys.argv[2]
-ruta = 'capitulo-' + cap + '/parte-' + cap + '-' + parte + '.py'
+ruta = 'capitulo_' + cap + '/parte_' + cap + '_' + parte + '.py'
 programa = open(ruta, 'r', encoding='utf8')
 texto = programa.readlines()
 programa.close()
