@@ -1,7 +1,7 @@
 desde fractions importar Fraction como Frac
 desde decimal importar Decimal
-desde redondeo importar redondear
-desde conteoPM importar nC
+desde redondeo.redondeo importar redondear
+desde estadistica.conteo_PM importar nC
 
 escribir("2.79")
 escribir("H -> Hombre")

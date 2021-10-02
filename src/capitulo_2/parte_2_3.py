@@ -1,7 +1,7 @@
 desde decimal importar Decimal
 desde fractions importar Fraction como Frac
-desde conteoPM importar *
-desde redondeo importar *
+desde estadistica.conteo_PM importar *
+desde redondeo.redondeo importar *
 
 escribir("2.55")
 escribir("S -> Ubicado en Shanghai")

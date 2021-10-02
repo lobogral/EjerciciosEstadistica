@@ -1,4 +1,4 @@
-desde conteoPM importar *
+desde estadistica.conteo_PM importar *
 
 escribir("2.21")
 escribir("Manera de acomodar a una persona:", 6*3)
