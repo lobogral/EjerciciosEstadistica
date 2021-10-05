@@ -5,8 +5,8 @@ desde sympy importar Eq como Ec
 desde sympy importar FiniteSet como Con
 desde fractions importar Fraction como Frac
 desde redondeo.redondeo importar redondear
-desde estadistica.distribuciones importar conjunta_continua como dist_conj_cont
-desde estadistica.distribuciones importar conjunta_discreta como dist_conj_disc
+desde estadistica.distribuciones importar dist_conj_cont
+desde estadistica.distribuciones importar dist_conj_disc
 
 x = Simbolo("x", real=Verdadero)
 y = Simbolo("y", real=Verdadero)

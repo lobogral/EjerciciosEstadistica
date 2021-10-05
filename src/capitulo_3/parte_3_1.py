@@ -6,8 +6,8 @@ desde sympy.abc importar x, y, w
 desde sympy.functions importar exp, factorial
 desde fractions importar Fraction como Frac
 desde redondeo.redondeo importar redondear
-desde estadistica.distribuciones importar continua como dist_cont
-desde estadistica.distribuciones importar discreta como dist_disc
+desde estadistica.distribuciones importar dist_cont
+desde estadistica.distribuciones importar dist_disc
 
 escribir("3.5")
 f = Trozos((x**2 + 4, (x>=0) & (x<=3)))
