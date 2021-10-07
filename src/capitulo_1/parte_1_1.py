@@ -32,10 +32,10 @@ muestra_2 = [219, 214, 215, 211, 209,
 escribir(muestra_2)
 escribir("c)")
 escribir("Media Deterioro =", redondear(media(muestra_2), 2), "psi")
-escribir("Media NoDeterioro =", redondear(media(muestra_1), 2), "psi")
+escribir("Media No Deterioro =", redondear(media(muestra_1), 2), "psi")
 escribir("d)")
 escribir("Mediana Deterioro =", redondear(mediana(muestra_2), 2), "psi")
-escribir("Mediana NoDeterioro =", redondear(mediana(muestra_1), 2), "psi")
+escribir("Mediana No Deterioro =", redondear(mediana(muestra_1), 2), "psi")
 
 puntos.dibujar( 
         [{'nombre': 'Sin deterioro', 'color': 'b', 'muestra': muestra_1},
