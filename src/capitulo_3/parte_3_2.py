@@ -36,7 +36,7 @@ escribir("3.41")
 f = Trozos((24*x*y, (0<=x) & (x<=1) &
                     (0<=y) & (y<=1) &
                     (x + y <= 1)),             
-            (0, otroCaso))
+            (0, otro_caso))
 dist_conj_cont.establecer_fdp(f)
 intervalo = x + y < Frac(1,2)
 prob = dist_conj_cont.prob(intervalo)
@@ -50,7 +50,7 @@ escribir("c) P( Y < 1/8 | X = 3/4 ) =", prob)
 escribir("")
 escribir("3.43")
 f = Trozos((4*x*y, (0<x) & (x<1) & (0<y) & (y<1)),        
-           (0, otroCaso))
+           (0, otro_caso))
 dist_conj_cont.establecer_fdp(f)
 intervalo = (0<=x) & (x<=Frac(1,2)) 
 intervalo = intervalo & (Frac(1,4)<=y) & (y<=Frac(1,2))
@@ -63,7 +63,7 @@ escribir("b) P(X < Y) =", prob)
 escribir("")
 escribir("3.45")
 f = Trozos((1/y, (0<x) & (x<y) & (y<1)),        
-           (0, otroCaso))
+           (0, otro_caso))
 dist_conj_cont.establecer_fdp(f)
 intervalo = x + y > 1/2
 prob = redondear(dist_conj_cont.prob(intervalo), 4)
@@ -72,7 +72,7 @@ escribir("P(X + Y > 1/2) =", prob)
 escribir("")
 escribir("3.47")
 f = Trozos((2, (0<x) & (x<y) & (y<1)),            
-           (0, otroCaso))
+           (0, otro_caso))
 dist_conj_cont.establecer_fdp(f)
 escribir("a)")
 escribir("g(x) =", dist_conj_cont.prob_marginal(x))
@@ -110,7 +110,7 @@ escribir("")
 escribir("3.55")
 f = Trozos(((6-x-y)/8, (0<x) & (x<2) & 
                        (2<y) & (y<4)),            
-           (0, otroCaso))
+           (0, otro_caso))
 dist_conj_cont.establecer_fdp(f)
 intervaloDep = (1 < y) & (y < 3)
 eqDep = Ec(x,1)
@@ -122,7 +122,7 @@ escribir("3.59")
 f = Trozos((x*(y**2)*z, (0<x) & (x<1) &
                         (0<y) & (y<1) & 
                         (0<z) & (z<2)),            
-           (0, otroCaso))
+           (0, otro_caso))
 k = 1/dist_conj_cont.prob_total(f)
 escribir("a) k =", k)
 dist_conj_cont.establecer_fdp(k*f)

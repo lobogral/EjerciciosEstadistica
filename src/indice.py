@@ -20,7 +20,7 @@ escribir = print
 tamaño = len
 
 " Variables "
-otroCaso = True
+otro_caso = True
 Verdadero = True
 
 " Palabras Clave"
