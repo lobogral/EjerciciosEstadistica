@@ -8,7 +8,7 @@ muestra = [3.4, 2.5, 4.8, 2.9, 3.6,
            2.8, 3.3, 5.6, 3.7, 2.8,
            4.4, 4.0, 5.2, 3.0, 4.8]
 escribir(muestra)
-escribir("a) Tamaño de la muestra =", tamaño(muestra), "datos")
+escribir("a) Tamaño de la muestra =", longitud(muestra), "datos")
 escribir("b) Media de la muestra =", redondear(media(muestra), 3), "horas")
 escribir("c) Mediana de la muestra =", mediana(muestra), "horas")
 escribir("e) x_tr(20) =", redondear(media_recortada(muestra, 0.2), 3), "horas")
