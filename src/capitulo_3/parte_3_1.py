@@ -6,8 +6,10 @@ desde sympy.abc importar x, y, w
 desde sympy.functions importar exp, factorial
 desde fractions importar Fraction como Frac
 desde redondeo.redondeo importar redondear
-desde estadistica.distribuciones importar dist_cont
+desde estadistica.distribuciones.dist_cont importar DistCont
 desde estadistica.distribuciones importar dist_disc
+
+dist_cont = DistCont() 
 
 escribir("3.5")
 f = Trozos((x**2 + 4, (x>=0) & (x<=3)))
@@ -22,7 +24,7 @@ escribir("3.7")
 f = Trozos((x, (0<x) & (x<1)),
            (2-x, (1<=x) & (x<2)), 
            (0, otro_caso))
-dist_cont.establecer_fdp(f)
+dist_cont.est_func_dist(f)
 prob = redondear(dist_cont.prob(x <= 1.2), 2)
 escribir("a) P(X < 1.2) =", prob)
 prob = redondear(dist_cont.prob( (0.5 < x) & (x < 1) ), 3)
@@ -32,7 +34,7 @@ escribir("")
 escribir("3.9")
 f = Trozos((Frac(2,5)*(x+2), (0<x) & (x<1)), 
            (0, otro_caso))
-dist_cont.establecer_fdp(f)
+dist_cont.est_func_dist(f)
 prob = dist_cont.prob_total(f)
 escribir("a) Área bajo curva =", prob)
 a = Frac(1,4)
@@ -76,7 +78,7 @@ escribir("")
 escribir("3.17")
 f = Trozos((Frac(1,2), (1<x) & (x<3)), 
            (0, otro_caso))
-dist_cont.establecer_fdp(f)
+dist_cont.est_func_dist(f)
 prob = dist_cont.prob_total(f)
 escribir("a) Área bajo curva =", prob)
 a = 2
@@ -90,7 +92,7 @@ escribir("")
 escribir("3.19")
 f = Trozos((Frac(1,2), (1<x) & (x<3)), 
            (0, otro_caso))
-dist_cont.establecer_fdp(f)
+dist_cont.est_func_dist(f)
 F = dist_cont.prob_acum()
 escribir("F(x) =", F)
 Fb = F.subs(x, Frac('2.5'))
@@ -104,7 +106,7 @@ f = Trozos((x**Frac(1,2), (0<x) & (x<1)),
 k = 1/dist_cont.prob_total(f)
 escribir("a) k =", k)
 escribir("b)")
-dist_cont.establecer_fdp(k*f)
+dist_cont.est_func_dist(k*f)
 F = dist_cont.prob_acum()
 escribir("F(x) =", F)
 Fb = F.subs(x, 0.6)
@@ -133,7 +135,7 @@ escribir("")
 escribir("3.27")
 f = Trozos((Frac(1,2000)*exp(-x/2000), (x>=0)), 
            (0, otro_caso))
-dist_cont.establecer_fdp(f)
+dist_cont.est_func_dist(f)
 F = dist_cont.prob_acum()
 escribir("a) F(x) =", F)
 prob = redondear(1 - F.subs(x,1000).evalf(), 4)
@@ -147,7 +149,7 @@ f = Trozos((3*x**(-4), (x>1)),
              (0, otro_caso))
 prob = dist_cont.prob_total(f)
 escribir("a) Área bajo curva =", prob)
-dist_cont.establecer_fdp(f)
+dist_cont.est_func_dist(f)
 F = dist_cont.prob_acum()
 escribir("b) F(x) =", F)
 P = redondear(1 - F.subs(x,4).evalf(), 4)
@@ -157,7 +159,7 @@ escribir("")
 escribir("3.31")
 f = Trozos((0.25*exp(-y/4), (y>=0)), 
            (0, otro_caso))
-dist_cont.establecer_fdp(f)
+dist_cont.est_func_dist(f)
 prob = redondear(dist_cont.prob(y > 6).evalf(),4)
 escribir("a) P(Y > 6) =", prob)
 prob = redondear(dist_cont.prob((0 < y) & (y < 1)).evalf(),4)
@@ -169,7 +171,7 @@ f = Trozos(((y**4)*(1-y)**3, (0<=y) & (y<=1)),
            (0, otro_caso))
 k = 1/dist_cont.prob_total(f)
 escribir("a) k =", k)
-dist_cont.establecer_fdp(k*f)
+dist_cont.est_func_dist(k*f)
 prob = redondear(dist_cont.prob((0 < y) & (y < 0.5)),4)
 escribir("b) P(0 < Y < 0.5) =", prob)
 prob = redondear(dist_cont.prob((0.8 < y) & (y < 1)),4)
