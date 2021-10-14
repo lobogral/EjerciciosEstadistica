@@ -7,9 +7,12 @@ desde sympy.functions importar exp, factorial
 desde fractions importar Fraction como Frac
 desde redondeo.redondeo importar redondear
 desde estadistica.distribuciones.dist_cont importar DistCont
-desde estadistica.distribuciones importar dist_disc
+desde estadistica.distribuciones.dist_disc importar DistDisc
+desde estadistica.distribuciones.transf importar dp_a_dist
+desde estadistica.distribuciones.transf importar dist_a_dp
 
-dist_cont = DistCont() 
+dist_cont = DistCont()
+dist_disc = DistDisc()
 
 escribir("3.5")
 f = Trozos((x**2 + 4, (x>=0) & (x<=3)))
@@ -45,20 +48,20 @@ escribir("b) P(1/4 < X < 1/2) =", prob)
 escribir("")
 escribir("3.11")
 f = Trozos(((nC(2,x)*nC(5,3-x))/nC(7,3), (x>=0) & (x<=2)))
-dist_disc.establecer_dp(f)
-escribir("Distribucion:", dist_disc.dp_a_dist())
+dist_disc.est_func_dist(f)
+escribir("Distribucion:", dp_a_dist(f))
 
 escribir("")
 escribir("3.13")
 dist = {0:0.41, 1:0.37, 2:0.16, 3:0.05, 4:0.01}
-f = dist_disc.dist_a_dp(dist, x)
-dist_disc.establecer_dp(f)
+f = dist_a_dp(dist, x)
+dist_disc.est_func_dist(f)
 escribir("F(x)=", dist_disc.prob_acum())
 
 escribir("")
 escribir("3.15")
 f = Trozos(((nC(2,x)*nC(5,3-x))/nC(7,3), (x>=0) & (x<=2)))
-dist_disc.establecer_dp(f)
+dist_disc.est_func_dist(f)
 F = dist_disc.prob_acum()
 escribir("F(x)=", F)
 escribir("-- P(X = 1) = f(1)")
@@ -119,8 +122,8 @@ dist = {-3:Frac(1,27),
         -1:Frac(6,27),
          1:Frac(12,27),
          3:Frac(8,27)}
-f = dist_disc.dist_a_dp(dist, w)
-dist_disc.establecer_dp(f)
+f = dist_a_dp(dist, w)
+dist_disc.est_func_dist(f)
 F = dist_disc.prob_acum()
 escribir("F(w)=", F)
 escribir("a) P(W > 0) =", 1-F.subs(w,0))
@@ -180,7 +183,7 @@ escribir("c) P(0.8 < Y < 1) =", prob)
 escribir("")
 escribir("3.35")
 f = Trozos((exp(-6)*(6**x)/factorial(x), x>=0))
-dist_disc.establecer_dp(f)
+dist_disc.est_func_dist(f)
 prob = redondear(1 - dist_disc.prob(x<=8).evalf(), 4)
 escribir("a) P(X > 8) =", prob)
 prob = redondear(dist_disc.prob(Ec(x,2)).evalf(), 4)
