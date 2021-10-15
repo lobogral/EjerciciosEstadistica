@@ -6,9 +6,12 @@ desde sympy importar FiniteSet como Con
 desde fractions importar Fraction como Frac
 desde redondeo.redondeo importar redondear
 desde estadistica.distribuciones.dist_conj_cont importar DistConjCont
-desde estadistica.distribuciones importar dist_conj_disc
+desde estadistica.distribuciones.dist_conj_disc importar DistConjDisc
+desde estadistica.distribuciones.transf_2 importar dp_a_dist
+desde estadistica.distribuciones.transf_2 importar dist_a_dp
 
 dist_conj_cont = DistConjCont()
+dist_conj_disc = DistConjDisc()
 
 x = Simbolo("x", real=Verdadero)
 y = Simbolo("y", real=Verdadero)
@@ -28,8 +31,8 @@ escribir("")
 escribir("3.39")
 f = Trozos(((nC(3,x)*nC(2,y)*nC(3,4-x-y))/nC(8,4), Con(0,1,2,3).pert(x) & 
                                                    Con(0,1,2).pert(y)))
-dist_conj_disc.establecer_dp(f)
-escribir("a) ", dist_conj_disc.dp_a_dist(x,y))
+dist_conj_disc.est_func_dist(f)
+escribir("a) ", dp_a_dist(f,x,y))
 prob = dist_conj_disc.prob(x + y <= 2)
 escribir("b) P(X + Y <= 2) =", prob)
 
@@ -90,8 +93,8 @@ escribir("3.49")
 dist = {(1, 1): 0.05, (2, 1): 0.05, (3, 1): 0.10, 
         (1, 2): 0.05, (2, 2): 0.10, (3, 2): 0.35, 
         (1, 3): 0.00, (2, 3): 0.20, (3, 3): 0.10}
-f = dist_conj_disc.dist_a_dp(dist, [x, y])
-dist_conj_disc.establecer_dp(f)
+f = dist_a_dp(dist, [x, y])
+dist_conj_disc.est_func_dist(f)
 dist_marginal_X = dist_conj_disc.prob_marginal(x)
 escribir("a) g(x) =", dist_marginal_X)
 dist_marginal_Y = dist_conj_disc.prob_marginal(y)
@@ -103,8 +106,8 @@ escribir("")
 escribir("3.53")
 f = Trozos(( (nC(4,x)*nC(4,y)*nC(4,3-x-y))/nC(12,3), Con(0,1,2,3).pert(x) &
                                                      Con(0,1,2,3).pert(y)))
-dist_conj_disc.establecer_dp(f)
-escribir("a)", dist_conj_disc.dp_a_dist(x,y))
+dist_conj_disc.est_func_dist(f)
+escribir("a)", dp_a_dist(f,x,y))
 prob = dist_conj_disc.prob(x + y >=2)
 escribir("b) P(X + Y <= 2) =", prob)
 
