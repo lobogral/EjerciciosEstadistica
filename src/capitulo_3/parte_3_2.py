@@ -5,8 +5,10 @@ desde sympy importar Eq como Ec
 desde sympy importar FiniteSet como Con
 desde fractions importar Fraction como Frac
 desde redondeo.redondeo importar redondear
-desde estadistica.distribuciones importar dist_conj_cont
+desde estadistica.distribuciones.dist_conj_cont importar DistConjCont
 desde estadistica.distribuciones importar dist_conj_disc
+
+dist_conj_cont = DistConjCont()
 
 x = Simbolo("x", real=Verdadero)
 y = Simbolo("y", real=Verdadero)
@@ -37,7 +39,7 @@ f = Trozos((24*x*y, (0<=x) & (x<=1) &
                     (0<=y) & (y<=1) &
                     (x + y <= 1)),             
             (0, otro_caso))
-dist_conj_cont.establecer_fdp(f)
+dist_conj_cont.est_func_dist(f)
 intervalo = x + y < Frac(1,2)
 prob = dist_conj_cont.prob(intervalo)
 escribir("a) P(X + Y < 1/2) =", prob)
@@ -51,7 +53,7 @@ escribir("")
 escribir("3.43")
 f = Trozos((4*x*y, (0<x) & (x<1) & (0<y) & (y<1)),        
            (0, otro_caso))
-dist_conj_cont.establecer_fdp(f)
+dist_conj_cont.est_func_dist(f)
 intervalo = (0<=x) & (x<=Frac(1,2)) 
 intervalo = intervalo & (Frac(1,4)<=y) & (y<=Frac(1,2))
 prob = dist_conj_cont.prob(intervalo)
@@ -64,7 +66,7 @@ escribir("")
 escribir("3.45")
 f = Trozos((1/y, (0<x) & (x<y) & (y<1)),        
            (0, otro_caso))
-dist_conj_cont.establecer_fdp(f)
+dist_conj_cont.est_func_dist(f)
 intervalo = x + y > 1/2
 prob = redondear(dist_conj_cont.prob(intervalo), 4)
 escribir("P(X + Y > 1/2) =", prob)
@@ -73,7 +75,7 @@ escribir("")
 escribir("3.47")
 f = Trozos((2, (0<x) & (x<y) & (y<1)),            
            (0, otro_caso))
-dist_conj_cont.establecer_fdp(f)
+dist_conj_cont.est_func_dist(f)
 escribir("a)")
 escribir("g(x) =", dist_conj_cont.prob_marginal(x))
 escribir("h(y) =", dist_conj_cont.prob_marginal(y))
@@ -111,7 +113,7 @@ escribir("3.55")
 f = Trozos(((6-x-y)/8, (0<x) & (x<2) & 
                        (2<y) & (y<4)),            
            (0, otro_caso))
-dist_conj_cont.establecer_fdp(f)
+dist_conj_cont.est_func_dist(f)
 intervalo_dep = (1 < y) & (y < 3)
 eq_dep = Ec(x,1)
 prob = dist_conj_cont.prob_condicional(intervalo_dep, eq_dep)
@@ -125,7 +127,7 @@ f = Trozos((x*(y**2)*z, (0<x) & (x<1) &
            (0, otro_caso))
 k = 1/dist_conj_cont.prob_total(f)
 escribir("a) k =", k)
-dist_conj_cont.establecer_fdp(k*f)
+dist_conj_cont.est_func_dist(k*f)
 intervalo = (x<Frac(1,4)) & (y > Frac(1,2)) & (1<z) & (z<2)
 prob = dist_conj_cont.prob(intervalo)
 escribir("b) P(X < 1/4, Y > 1/2, 1 < Z < 2) =", prob)
