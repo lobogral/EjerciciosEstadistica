@@ -7,8 +7,8 @@ desde fractions importar Fraction como Frac
 desde redondeo.redondeo importar redondear
 desde estadistica.distribuciones.dist_conj_cont importar DistConjCont
 desde estadistica.distribuciones.dist_conj_disc importar DistConjDisc
-desde estadistica.distribuciones.transf_2 importar dp_a_dist
-desde estadistica.distribuciones.transf_2 importar dist_a_dp
+desde estadistica.distribuciones.transf_conj importar dp_a_dist
+desde estadistica.distribuciones.transf_conj importar dist_a_dp
 
 dist_conj_cont = DistConjCont()
 dist_conj_disc = DistConjDisc()
