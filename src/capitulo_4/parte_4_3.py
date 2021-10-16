@@ -2,8 +2,11 @@ desde sympy importar Piecewise como Trozos
 desde sympy importar Symbol como Simbolo
 desde sympy.functions importar exp
 desde fractions importar Fraction como Frac
-desde estadistica.esperanza importar E_disc, E_cont
+desde estadistica.esperanza importar E_disc
+desde estadistica.esperanza.esp_cont importar EspCont
 desde redondeo.redondeo importar redondear
+
+esp_cont = EspCont()
 
 x = Simbolo("x", real=Verdadero)
 y = Simbolo("y", real=Verdadero)
@@ -85,18 +88,18 @@ escribir("4.71")
 f = Trozos((Frac(2,7)*(x+2*y), (0<=x) & (x<=1) &
                                (1<=y) & (y<=2)),
            (0, otro_caso))
-E_cont.establecer_fdp(f)
-E_XY3 = E_cont.E(x/(y**3))
-E_X2Y = E_cont.E(x**2*y)
+esp_cont.establecer_fdp(f)
+E_XY3 = esp_cont.esperanza(x/(y**3))
+E_X2Y = esp_cont.esperanza(x**2*y)
 escribir("E(X/(Y^3) + (X^2)Y) =", E_XY3 + E_X2Y)
 
 escribir("")
 escribir("4.73")
 f = Trozos((Frac(1,5), (0<=x) & (x<=5)),
            (0, otro_caso))
-E_cont.establecer_fdp(f)
-E_X = redondear(E_cont.E(x).evalf(), 1)
-E_X2 = redondear(E_cont.E(x**2).evalf(), 2)
+esp_cont.establecer_fdp(f)
+E_X = redondear(esp_cont.esperanza(x).evalf(), 1)
+E_X2 = redondear(esp_cont.esperanza(x**2).evalf(), 2)
 escribir("E(X) =", E_X)
 escribir("Var(X) =", E_X2 - E_X**2)
 
@@ -117,9 +120,9 @@ escribir("")
 escribir("4.77")
 f = Trozos((Frac(1,4)*exp(-y/4), (y>=0)), 
            (0, otro_caso))
-E_cont.establecer_fdp(f)
-E_Y = E_cont.E(y)
-E_Y2 = E_cont.E(y**2)
+esp_cont.establecer_fdp(f)
+E_Y = esp_cont.esperanza(y)
+E_Y2 = esp_cont.esperanza(y**2)
 escribir("a)")
 escribir("E(Y) =", E_Y)
 escribir("b)")
@@ -129,10 +132,10 @@ escribir("")
 escribir("4.79")
 f = Trozos((1, (7<=y) & (y<=8) ), 
            (0, otro_caso))
-E_cont.establecer_fdp(f)
-E_Y = E_cont.E(y)
-Var_Y = E_cont.Var(y)
-E_eY = redondear(E_cont.E(exp(y)).evalf(), 2)
+esp_cont.establecer_fdp(f)
+E_Y = esp_cont.esperanza(y)
+Var_Y = esp_cont.varianza(y)
+E_eY = redondear(esp_cont.esperanza(exp(y)).evalf(), 2)
 escribir("De forma exacta, E(e^y) =", E_eY)
 E_eY = redondear((exp(E_Y)*(1 + Var_Y/2)).evalf(), 2)
 escribir("Por series de Taylor, E(e^y) =", E_eY) 

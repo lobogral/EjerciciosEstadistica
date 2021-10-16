@@ -5,14 +5,17 @@ desde sympy importar pi
 desde sympy importar FiniteSet como Con
 desde sympy.functions importar exp
 desde fractions importar Fraction como Frac
-desde estadistica.esperanza importar E_disc, E_cont
-desde estadistica.distribuciones importar dist_cont
+desde estadistica.esperanza importar E_disc
+desde estadistica.esperanza.esp_cont importar EspCont
+desde estadistica.distribuciones.dist_cont importar DistCont
 desde redondeo.redondeo importar redondear
 desde sympy importar simplify
 
 t = Simbolo("t", real=Verdadero)
 x = Simbolo("x", real=Verdadero)
 y = Simbolo("y", real=Verdadero)
+
+esp_cont = EspCont()
 
 escribir("4.3")
 dist = {20:Frac(1,5),
@@ -63,8 +66,8 @@ escribir("")
 escribir("4.13")
 f = Trozos((4/(pi*(1+x**2)), (0<x) & (x<1)),
            (0, otro_caso))
-E_cont.establecer_fdp(f)
-E_X = E_cont.E(x)
+esp_cont.establecer_fdp(f)
+E_X = esp_cont.esperanza(x)
 escribir("E(X) =", E_X)
 
 escribir("")
@@ -72,8 +75,8 @@ escribir("4.15")
 f = Trozos((x, (0<x) & (x<1)),
            (2-x, (1<=x) & (x<2)), 
            (0, otro_caso))
-E_cont.establecer_fdp(f)
-E_X = E_cont.E(x)*100
+esp_cont.establecer_fdp(f)
+E_X = esp_cont.esperanza(x)*100
 escribir("E(X) =", E_X, "horas")
 
 escribir("")
@@ -101,8 +104,8 @@ escribir("")
 escribir("4.21")
 f = Trozos((2*(1-x), (0<x) & (x<1)),
            (0, otro_caso))
-E_cont.establecer_fdp(f)
-E_g_X = redondear(E_cont.E(x**2).evalf()*5000, 2)
+esp_cont.establecer_fdp(f)
+E_g_X = redondear(esp_cont.esperanza(x**2).evalf()*5000, 2)
 escribir("g(X) = X^2, E(g(X)) = $", E_g_X)
 
 escribir("")
@@ -131,25 +134,26 @@ escribir("")
 escribir("4.27")
 f = Trozos((Frac(1,2000)*exp(-x/2000), (x>=0)), 
            (0, otro_caso))
-E_cont.establecer_fdp(f)
-E_X = E_cont.E(x)
+esp_cont.establecer_fdp(f)
+E_X = esp_cont.esperanza(x)
 escribir("E(X) =", E_X, "horas")
 
 escribir("")
 escribir("4.29")
 f = Trozos((3*x**(-4), (x>1)), 
              (0, otro_caso))
-E_cont.establecer_fdp(f)
-E_X = E_cont.E(x)
+esp_cont.establecer_fdp(f)
+E_X = esp_cont.esperanza(x)
 escribir("E(X) =", E_X)
 
 escribir("")
 escribir("4.31")
 f = Trozos((5*(1-y)**4, (0<=y) & (y<=1)), 
              (0, otro_caso))
-E_cont.establecer_fdp(f)
-E_Y = E_cont.E(y)
+esp_cont.establecer_fdp(f)
+E_Y = esp_cont.esperanza(y)
 escribir("a) E(Y) =", E_Y)
-dist_cont.establecer_fdp(f)
+dist_cont = DistCont()
+dist_cont.est_func_dist(f)
 prob = simplify(dist_cont.prob(y>E_Y))
 escribir("a) P(Y > E) =", prob, "= (5/6)^5")

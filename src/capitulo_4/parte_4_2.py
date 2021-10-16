@@ -2,8 +2,11 @@ desde sympy importar Piecewise como Trozos
 desde sympy importar Symbol como Simbolo
 desde sympy.functions importar exp
 desde fractions importar Fraction como Frac
-desde estadistica.esperanza importar E_disc, E_cont
+desde estadistica.esperanza importar E_disc
+desde estadistica.esperanza.esp_cont importar EspCont
 desde redondeo.redondeo importar redondear
+
+esp_cont = EspCont()
 
 t = Simbolo("t", real=Verdadero)
 x = Simbolo("x", real=Verdadero)
@@ -29,8 +32,8 @@ escribir("")
 escribir("4.37")
 f = Trozos((2*(1-x), (0<x) & (x<1)),
            (0, otro_caso))
-E_cont.establecer_fdp(f)
-Var_X = E_cont.Var(x)
+esp_cont.establecer_fdp(f)
+Var_X = esp_cont.varianza(x)
 escribir("Var(X) = $", Var_X, "* 5000")
 
 escribir("")
@@ -38,8 +41,8 @@ escribir("4.39")
 f = Trozos((x, (0<x) & (x<1)),
            (2-x, (1<=x) & (x<2)), 
            (0, otro_caso))
-E_cont.establecer_fdp(f)
-Var_X = E_cont.Var(x)
+esp_cont.establecer_fdp(f)
+Var_X = esp_cont.varianza(x)
 escribir("Var(X) = ", Var_X, "* 100 horas")
 
 escribir("")
@@ -56,9 +59,9 @@ escribir("")
 escribir("4.43")
 f = Trozos((Frac(1,4)*exp(-x/4), x>0),
            (0, otro_caso))
-E_cont.establecer_fdp(f)
-E_g_X = E_cont.E(3*x-2)
-Var_g_X = E_cont.Var(3*x-2)
+esp_cont.establecer_fdp(f)
+E_g_X = esp_cont.esperanza(3*x-2)
+Var_g_X = esp_cont.varianza(3*x-2)
 escribir("Y = g(X) = 3X-2")
 escribir("E(Y) = ", E_g_X)
 escribir("Var(Y) = ", Var_g_X)
@@ -78,8 +81,8 @@ escribir("4.47")
 f = Trozos((Frac(2,3)*(x+2*y), (0<=x) & (x<=1) &
                                (0<=y) & (y<=1)),
            (0, otro_caso))
-E_cont.establecer_fdp(f)
-Cov = redondear(E_cont.Cov().evalf(), 4)
+esp_cont.establecer_fdp(f)
+Cov = redondear(esp_cont.covarianza().evalf(), 4)
 escribir("Cov(X,Y) =", Cov)
 
 escribir("")
