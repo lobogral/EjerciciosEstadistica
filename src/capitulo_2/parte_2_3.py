@@ -1,6 +1,6 @@
 desde decimal importar Decimal
 desde fractions importar Fraction como Frac
-desde estadistica.conteo_PM importar *
+desde estadistica.conteo_pm importar *
 desde redondeo.redondeo importar *
 
 escribir("2.55")
@@ -22,19 +22,19 @@ escribir("c) Listada despues de la g:", prob)
 
 escribir("")
 escribir("2.59")
-prob = Frac(5*nP(25,2)*(9**3)*4, nP(26,3)*(9**4))
+prob = Frac(5*perms(25,2)*(9**3)*4, perms(26,3)*(9**4))
 escribir("Seleccionar artículo:", prob)
 
 escribir("")
 escribir("2.61")
-prob = Frac(nC(20,2),nC(52,2))
+prob = Frac(combs(20,2),combs(52,2))
 escribir("Escoger cartas correctas:", prob)
 
 escribir("")
 escribir("2.63")
-prob = Frac(nC(4,3)*nC(48,2),nC(52,5))
+prob = Frac(combs(4,3)*combs(48,2),combs(52,5))
 escribir("a) Tener 3 ases:", prob)
-prob = Frac(nC(13,4)*nC(13,1),nC(52,5))
+prob = Frac(combs(13,4)*combs(13,1),combs(52,5))
 escribir("b) Tener 4 corazones y 1 tréboles:", prob)
 
 escribir("")
