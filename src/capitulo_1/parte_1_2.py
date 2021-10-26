@@ -1,58 +1,59 @@
-desde estadistica.medidas_variabilidad importar *
-desde redondeo.redondeo importar *
+from estadistica.medidas_variabilidad import varianza
+from estadistica.medidas_variabilidad import desviacion_estandar
+from redondeo.redondeo import redondear
 
-escribir("1.7")
-escribir("Mediciones tiempo de secado en pintura (horas)")
+print("1.7")
+print("Mediciones tiempo de secado en pintura (horas)")
 muestra = [3.4, 2.5, 4.8, 2.9, 3.6,
            2.8, 3.3, 5.6, 3.7, 2.8,
            4.4, 4.0, 5.2, 3.0, 4.8]
-escribir(muestra)
-escribir("Varianza de la muestra =",
-         redondear(varianza(muestra), 3), "(horas)^2")
-escribir("Desviación estándar de la muestra =",
-         redondear(desviacion_estandar(muestra), 3), "horas")
+print(muestra)
+print("Varianza de la muestra =",
+      redondear(varianza(muestra), 3), "(horas)^2")
+print("Desviación estándar de la muestra =",
+      redondear(desviacion_estandar(muestra), 3), "horas")
 
-escribir("")
-escribir("1.9")
-escribir("Mediciones resistencia a la tensión en aviones (psi)")
-escribir("Sin envejecimiento acelerado")
+print("")
+print("1.9")
+print("Mediciones resistencia a la tensión en aviones (psi)")
+print("Sin envejecimiento acelerado")
 muestra_1 = [227, 222, 218, 217, 225,
              218, 216, 229, 228, 221]
-escribir(muestra_1)
-escribir("Con envejecimiento acelerado")
+print(muestra_1)
+print("Con envejecimiento acelerado")
 muestra_2 = [219, 214, 215, 211, 209,
              218, 203, 204, 201, 205]
-escribir(muestra_2)
-escribir("Sin envejecimiento")
-escribir("Varianza de la muestra =",
-         redondear(varianza(muestra_1), 2), "(psi)^2")
-escribir("Desviación estándar de la muestra =",
-         redondear(desviacion_estandar(muestra_1), 2), "psi")
-escribir("Con envejecimiento")
-escribir("Varianza de la muestra =",
-         redondear(varianza(muestra_2), 2), "(psi)^2")
-escribir("Desviación estándar de la muestra =",
-         redondear(desviacion_estandar(muestra_2), 2), "psi")
+print(muestra_2)
+print("Sin envejecimiento")
+print("Varianza de la muestra =",
+      redondear(varianza(muestra_1), 2), "(psi)^2")
+print("Desviación estándar de la muestra =",
+      redondear(desviacion_estandar(muestra_1), 2), "psi")
+print("Con envejecimiento")
+print("Varianza de la muestra =",
+      redondear(varianza(muestra_2), 2), "(psi)^2")
+print("Desviación estándar de la muestra =",
+      redondear(desviacion_estandar(muestra_2), 2), "psi")
 
 
-escribir("")
-escribir("1.11")
-escribir("Mediciones reducción de Colesterol en personas (mg/dL)")
-escribir("Grupo de control")
+print("")
+print("1.11")
+print("Mediciones reducción de Colesterol en personas (mg/dL)")
+print("Grupo de control")
 muestra_1 = [7,  3, -4, 14, 2,
              5, 22, -7,  9, 5]
-escribir(muestra_1)
-escribir("Grupo de tratamiento")
+print(muestra_1)
+print("Grupo de tratamiento")
 muestra_2 = [-6,  5, 9, 4, 4,
              12, 37, 5, 3, 3]
-escribir(muestra_2)
-escribir("Control")
-escribir("Varianza de la muestra =",
-         redondear(varianza(muestra_1), 2), "(mg/dL)^2")
-escribir("Desviación estándar de la muestra =",
-         redondear(desviacion_estandar(muestra_1), 2), "mg/dL")
-escribir("Tratamiento")
-escribir("Varianza de la muestra =",
-         redondear(varianza(muestra_2), 2), "(mg/dL)^2")
-escribir("Desviación estándar de la muestra =",
-         redondear(desviacion_estandar(muestra_2), 2), "mg/dL")
+print(muestra_2)
+print("Control")
+print("Varianza de la muestra =",
+      redondear(varianza(muestra_1), 2), "(mg/dL)^2")
+print("Desviación estándar de la muestra =",
+      redondear(desviacion_estandar(muestra_1), 2), "mg/dL")
+print("Tratamiento")
+print("Varianza de la muestra =",
+      redondear(varianza(muestra_2), 2), "(mg/dL)^2")
+print("Desviación estándar de la muestra =",
+      redondear(desviacion_estandar(muestra_2), 2), "mg/dL")
