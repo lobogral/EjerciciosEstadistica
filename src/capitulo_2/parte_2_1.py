@@ -1,55 +1,55 @@
-escribir("2.5")
-S = {'1HH', '1HT', '1TH', '1TT', '2H', '2T', 
-     '3HH', '3HT', '3TH', '3TT', '4H', '4T', 
+print("2.5")
+S = {'1HH', '1HT', '1TH', '1TT', '2H', '2T',
+     '3HH', '3HT', '3TH', '3TT', '4H', '4T',
      '5HH', '5HT', '5TH', '5TT', '6H', '6T'}
-escribir("S =", S)
+print("S =", S)
 
-escribir("")
-escribir("2.9")
-S = {'1HH', '1HT', '1TH', '1TT', '2H', '2T', 
-     '3HH', '3HT', '3TH', '3TT', '4H', '4T', 
+print("")
+print("2.9")
+S = {'1HH', '1HT', '1TH', '1TT', '2H', '2T',
+     '3HH', '3HT', '3TH', '3TT', '4H', '4T',
      '5HH', '5HT', '5TH', '5TT', '6H', '6T'}
-escribir("S =", S)
+print("S =", S)
 A = {'1HH', '1HT', '1TH', '1TT', '2H', '2T'}
-escribir("a) A =", A)
+print("a) A =", A)
 B = {'1TT', '3TT', '5TT'}
-escribir("b) B =", B)
-escribir("c) A' =", S - A)
-escribir("d) A' ∩ B =", (S - A) & B)
-escribir("e) A ∪ B =", A | B)
+print("b) B =", B)
+print("c) A' =", S - A)
+print("d) A' ∩ B =", (S - A) & B)
+print("e) A ∪ B =", A | B)
 
-escribir("")
-escribir("2.11")
-S = {'M1M2', 'M1F1', 'M1F2', 
-     'M2M1', 'M2F1', 'M2F2', 
-     'F1M1', 'F1M2', 'F1F2', 
+print("")
+print("2.11")
+S = {'M1M2', 'M1F1', 'M1F2',
+     'M2M1', 'M2F1', 'M2F2',
+     'F1M1', 'F1M2', 'F1F2',
      'F2M1', 'F2M2', 'F2F1'}
-escribir("a) S =", S)
-A = {'M1M2', 'M1F1', 'M1F2', 
+print("a) S =", S)
+A = {'M1M2', 'M1F1', 'M1F2',
      'M2M1', 'M2F1', 'M2F2'}
-escribir("b) A =", A)
+print("b) A =", A)
 B = {'M1F1', 'M1F2', 'M2F1', 'M2F2',
      'F1M1', 'F1M2', 'F2M1', 'F2M2'}
-escribir("c) B =", B)
+print("c) B =", B)
 C = {'F1F2', 'F2F1'}
-escribir("d) C =", C)
-escribir("e) A ∩ B =", A & B)
-escribir("f) A ∪ C =", A | C)
+print("d) C =", C)
+print("e) A ∩ B =", A & B)
+print("f) A ∪ C =", A | C)
 
-escribir("")
-escribir("2.15")
-S = {'cobre', 'sodio',
-'nitrógeno', 'potasio', 'uranio', 'oxígeno', 'cinc'}
-escribir("S =", S)
+print("")
+print("2.15")
+S = {'cobre', 'sodio', 'nitrógeno', 'potasio',
+     'uranio', 'oxígeno', 'cinc'}
+print("S =", S)
 A = {'cobre', 'sodio', 'cinc'}
-escribir("A =", A)
+print("A =", A)
 B = {'sodio', 'nitrógeno', 'potasio'}
-escribir("B =", B)
+print("B =", B)
 C = {'oxígeno'}
-escribir("C =", C)
-escribir("a) A' =", S - A)
-escribir("b) A ∪ C =", A | C)
-escribir("c) (A ∩ B') ∪ C' =", (A & (S - B)) | (S - C))
-escribir("d) B' ∩ C' =", (S - B) & (S - C))
-escribir("e) A ∩ B ∩ C =", A & B & C)
-escribir("f) (A'∪ B') ∩ (A'∩ C) =", ((S - A) | (S - B)) & ((S - A) & C))
+print("C =", C)
+print("a) A' =", S - A)
+print("b) A ∪ C =", A | C)
+print("c) (A ∩ B') ∪ C' =", (A & (S - B)) | (S - C))
+print("d) B' ∩ C' =", (S - B) & (S - C))
+print("e) A ∩ B ∩ C =", A & B & C)
+print("f) (A'∪ B') ∩ (A'∩ C) =", ((S - A) | (S - B)) & ((S - A) & C))
