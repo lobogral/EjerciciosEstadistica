@@ -1,27 +1,7 @@
-import re
 import sys
+import os
 
 cap = sys.argv[1]
 parte = sys.argv[2]
 ruta = 'capitulo_' + cap + '/parte_' + cap + '_' + parte + '.py'
-programa = open(ruta, 'r', encoding='utf8')
-texto = programa.read()
-programa.close()
-
-"""
-Traducciones
-"""
-
-" Funciones "
-escribir = print
-longitud = len
-
-" Variables "
-otro_caso = True
-Verdadero = True
-
-" Palabras Clave"
-texto = re.sub('desde (.+) importar (.+) como (.+)', 'from \g<1> import \g<2> as \g<3>', texto)
-texto = re.sub('desde (.+) importar (.+)', 'from \g<1> import \g<2>', texto)
-texto = re.sub('\.pert\(', '.as_relational(', texto)
-exec(texto)
+os.system("py " + ruta)
