@@ -13,7 +13,7 @@ print("P(X < 4) =", uniforme.prob(x < 4))
 
 print("")
 print("5.3")
-esp = Esp(uniforme)
+esp = Esp(uniforme.ret_dist())
 print("E(X) =", redondear(esp.esperanza(x).evalf(), 1))
 print("Var(X) =", redondear(esp.varianza(x).evalf(), 2))
 
