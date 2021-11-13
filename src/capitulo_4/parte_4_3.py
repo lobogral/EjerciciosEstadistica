@@ -5,8 +5,8 @@ from sympy import Symbol as Simbolo
 from sympy.functions import exp
 from estadistica.esperanza.esp_disc import EspDisc
 from estadistica.esperanza.esp_cont import EspCont
-from estadistica.distribuciones import transf
-from estadistica.distribuciones import transf_conj
+from estadistica.transf import transf
+from estadistica.transf import transf_conj
 from redondeo.redondeo import redondear
 
 esp_disc = EspDisc()

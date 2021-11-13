@@ -10,8 +10,8 @@ from sympy.functions import factorial
 from redondeo.redondeo import redondear
 from estadistica.distribuciones.dist_cont import DistCont
 from estadistica.distribuciones.dist_disc import DistDisc
-from estadistica.distribuciones.transf import dp_a_dist
-from estadistica.distribuciones.transf import dist_a_dp
+from estadistica.transf.transf import dp_a_dist
+from estadistica.transf.transf import dist_a_dp
 
 x = Symbol("x", real=True)
 y = Symbol("y", real=True)

@@ -7,8 +7,8 @@ from sympy import FiniteSet as Con
 from redondeo.redondeo import redondear
 from estadistica.distribuciones.dist_conj_cont import DistConjCont
 from estadistica.distribuciones.dist_conj_disc import DistConjDisc
-from estadistica.distribuciones.transf_conj import dp_a_dist
-from estadistica.distribuciones.transf_conj import dist_a_dp
+from estadistica.transf.transf_conj import dp_a_dist
+from estadistica.transf.transf_conj import dist_a_dp
 
 dist_conj_cont = DistConjCont()
 dist_conj_disc = DistConjDisc()
